@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.15.0 — Community Product Hardening
+
+- Fixed the operational dashboard approval metric to count investigations that require `human_approval_required` while remaining compatible with the legacy `human_review_required` field.
+- Centralized runtime and dashboard version reporting on the repository `VERSION` file.
+- Added regression tests for approval-gated investigations and version consistency.
+- Validated the public Community Edition with a clean-clone deterministic demo before the hardening release.
+- Kept production execution disabled and connectors read-only in the Community reference runtime.
+
 ## 3.14.0 — Public Repository, Release Automation & Product Landing Page
 
 - Added semantic-tag GitHub Release automation.
