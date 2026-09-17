@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.15.2 — Landing Page Version Alignment
+
+- Corrected the public landing-page footer to report `3.15.2`.
+- Aligned the landing-page configuration and displayed product version with the release artifact.
+- Preserved the Community reference runtime safety model: production execution remains disabled and infrastructure connectors remain read-only.
+
 ## 3.15.1 — Release Artifact and Landing Configuration Fix
 
 - Updated the public landing-page configuration to reference the canonical GitHub repository.
