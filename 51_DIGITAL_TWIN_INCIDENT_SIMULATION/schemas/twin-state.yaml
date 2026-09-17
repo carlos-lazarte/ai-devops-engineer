@@ -1,0 +1,25 @@
+type: object
+required:
+  - twin_id
+  - environment
+  - components
+properties:
+  twin_id:
+    type: string
+  environment:
+    type: string
+    enum: [lab-sim]
+  components:
+    type: array
+    items:
+      type: object
+      required: [id, kind, state]
+      properties:
+        id:
+          type: string
+        kind:
+          type: string
+        state:
+          type: string
+  telemetry_profile:
+    type: string

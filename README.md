@@ -7,15 +7,19 @@ AI DevOps Engineer is a local-first AI/SRE operations platform that connects **k
 ## What you can do today
 
 ```text
-Telemetry → Event Correlation → Incident Candidate
-                         ↓
-             Automated Investigation
-                         ↓
-          Evidence + Hypotheses + Unknowns
-                         ↓
-                Operational Dashboard
-                         ↓
-                 Human Approval Boundary
+Telemetry
+   ↓
+Event Correlation
+   ↓
+Incident Candidate
+   ↓
+Automated Investigation
+   ↓
+Evidence + Hypotheses + Unknowns
+   ↓
+Operational Dashboard
+   ↓
+Human Approval Boundary
 ```
 
 The public reference runtime is deliberately conservative: infrastructure connectors are read-only and production execution is disabled.
@@ -36,28 +40,77 @@ docker compose -f docker-compose.community.yml up --build
 
 Then open `http://localhost:8080/`.
 
-## Repository
+## Public repository and release flow
 
-Source and release material are published at:
+The v3.14 release tooling is under `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/`.
 
-`https://github.com/carlos-lazarte/ai-devops-engineer`
+```bash
+make public-check
+make release-check
+make site-check
+make package
+```
 
-## Product path
+GitHub Releases are created by `.github/workflows/release.yml` when a semantic version tag such as `v3.14.0` is pushed. The landing page is deployed by `.github/workflows/pages.yml`. A separate release workflow can publish the Community container to GHCR.
 
-Community is the public reference implementation. Future Pro/Enterprise capabilities are described as roadmap/customer-discovery scope; they are not represented as currently available features.
+See `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/docs/Public-Repository-Blueprint.md` and `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/docs/PUBLICATION-CHECKLIST.md` for the publication sequence.
+
+## Product landing page
+
+The static landing page source is in `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/site/`. Replace `https://github.com/OWNER/REPO` with the actual repository URL before publication:
+
+```bash
+python3 66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/scripts/configure_repo.py OWNER/REPO
+```
+
+## Repository map
+
+- `00_START_HERE/` — orientation and workflows
+- `15_AI_FOR_DEVOPS/` — AI/SRE operating model
+- `24_RAG_SEMANTIC_RETRIEVAL/` — RAG
+- `35_RUNTIME/` — executable local runtime
+- `51_DIGITAL_TWIN_INCIDENT_SIMULATION/` — deterministic simulation
+- `58_AUTONOMOUS_INCIDENT_DETECTION_CORRELATION/` — incident correlation
+- `59_EVENT_DRIVEN_AGENT_TRIGGERING_INCIDENT_COMMANDER/` — event-driven commander
+- `61_REAL_TELEMETRY_EVENT_INGESTION/` — telemetry ingestion
+- `62_PRODUCTION_OBSERVABILITY_CONNECTORS/` — bounded connectors
+- `63_AUTOMATED_INCIDENT_INVESTIGATION/` — evidence-first investigation
+- `64_INVESTIGATION_UI_OPERATIONAL_DASHBOARD/` — operational UI
+- `65_PUBLIC_DEMO_GITHUB_COMMUNITY_EDITION/` — public demo and contribution tooling
+- `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/` — public release, Pages and product site
 
 ## Safety model
 
 ```text
-Evidence → Reasoning → Planning → Policy / Identity → Human Approval → Execution → Verification
+Evidence
+   ↓
+Reasoning
+   ↓
+Planning
+   ↓
+Policy / Identity
+   ↓
+Human Approval
+   ↓
+Execution
+   ↓
+Verification
 ```
 
-The model is not the authorization layer. Connector credentials do not grant remediation permission.
+The model is not the authorization layer. A connector's credentials do not grant remediation permission.
+
+## Community Edition vs. future commercial editions
+
+Community is the public reference product. Future commercial editions may add enterprise authentication, deployment profiles, integrations, support and other capabilities. See `65_PUBLIC_DEMO_GITHUB_COMMUNITY_EDITION/docs/Community-vs-Enterprise.md`.
+
+## Contributing
+
+Read `COMMUNITY.md`, `GOVERNANCE.md`, `CODE_OF_CONDUCT.md` and `CONTRIBUTING.md` before opening a pull request.
 
 ## License
 
-Community Edition source is packaged under Apache-2.0. Review dependency licenses before redistribution. Project name and branding remain separate from the software license.
+Community Edition source is packaged under Apache-2.0. Review dependency licenses before redistribution. The project name and branding remain separate from the software license.
 
 ## Status
 
-Reference implementation and product-development base. Validate deployment-specific security, capacity, compliance and integrations before production use.
+This repository is a reference implementation and product-development base. Validate deployment-specific security, capacity, compliance and integrations in the target environment before production use.

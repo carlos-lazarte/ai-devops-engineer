@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["request_id", "principal", "role", "tool", "operation"],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1},
+    "principal": {"type": "string", "minLength": 1},
+    "role": {"type": "string", "enum": ["viewer", "analyst", "operator"]},
+    "tool": {"type": "string", "minLength": 1},
+    "operation": {"type": "string", "minLength": 1},
+    "risk_override": {"type": ["string", "null"]},
+    "approval_id": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

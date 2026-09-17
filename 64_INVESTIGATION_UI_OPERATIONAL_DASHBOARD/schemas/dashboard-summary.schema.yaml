@@ -1,0 +1,18 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: AI DevOps Dashboard Summary
+type: object
+required: [status, version, totals, incidents, investigations, telemetry, execution]
+properties:
+  status: {type: string}
+  version: {type: string}
+  totals:
+    type: object
+    required: [incidents, investigations, telemetry_events]
+  incidents:
+    type: object
+  investigations:
+    type: object
+  telemetry:
+    type: object
+  execution:
+    type: object

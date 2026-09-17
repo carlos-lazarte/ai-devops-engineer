@@ -1,0 +1,10 @@
+version: "1.0"
+required: [task_id, from_state, to_state, actor, reason, timestamp]
+fields:
+  task_id: string
+  from_state: string
+  to_state: string
+  actor: string
+  reason: string
+  approval_id: string|null
+  timestamp: datetime

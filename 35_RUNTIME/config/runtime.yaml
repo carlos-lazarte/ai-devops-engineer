@@ -1,0 +1,21 @@
+version: "1.0"
+listen:
+  host: "127.0.0.1"
+  port: 8080
+security:
+  filesystem: read_only
+  external_execution: false
+  allow_shell: false
+  allow_ssh: false
+  allow_cluster_changes: false
+  human_approval_required_for_actions: true
+retrieval:
+  top_k: 5
+  max_query_chars: 500
+  max_note_bytes: 100000
+audit:
+  enabled: true
+  path: "runtime-data/audit.jsonl"
+claude:
+  enabled: true
+  secret_source: environment

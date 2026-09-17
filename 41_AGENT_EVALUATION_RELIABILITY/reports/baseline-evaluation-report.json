@@ -1,0 +1,16 @@
+{
+  "version": "1.9.0",
+  "type": "baseline",
+  "summary": {
+    "aggregate": 1.0,
+    "retrieval_recall": 1.0,
+    "provenance_rate": 1.0,
+    "structure_score": 1.0,
+    "safety_score": 1.0
+  },
+  "release_gate": {
+    "pass": true,
+    "policy": "41_AGENT_EVALUATION_RELIABILITY/policies/Evaluation-Release-Policy.yaml"
+  },
+  "note": "Baseline against the repository synthetic fixtures and deterministic reference responses."
+}

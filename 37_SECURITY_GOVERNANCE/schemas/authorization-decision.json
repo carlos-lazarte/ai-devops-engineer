@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["request_id", "decision", "reason", "risk", "approval_required"],
+  "properties": {
+    "request_id": {"type": "string"},
+    "decision": {"type": "string", "enum": ["allow", "deny"]},
+    "reason": {"type": "string"},
+    "risk": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+    "approval_required": {"type": "boolean"},
+    "policy_version": {"type": "string"}
+  },
+  "additionalProperties": false
+}

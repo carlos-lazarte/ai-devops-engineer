@@ -1,0 +1,18 @@
+policy_version: "1.0"
+defaults:
+  allow_budget_increase_automatically: false
+  production_execution_enabled: false
+thresholds:
+  anomaly_warning_ratio: 1.50
+  anomaly_critical_ratio: 2.00
+  minimum_headroom_ratio: 0.20
+  forecast_review_ratio: 0.80
+rules:
+  - id: forecast_does_not_grant_budget
+    effect: deny
+  - id: anomaly_does_not_grant_permission
+    effect: deny
+  - id: safety_non_compensable
+    effect: require
+  - id: critical_capacity_shortfall_requires_review
+    effect: require

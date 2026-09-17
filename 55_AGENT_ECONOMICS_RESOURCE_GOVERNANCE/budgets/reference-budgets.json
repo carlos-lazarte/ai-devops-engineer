@@ -1,0 +1,26 @@
+[
+  {
+    "budget_id": "tenant-a-lab-default",
+    "tenant_id": "tenant-a",
+    "environment": "lab",
+    "max_cost": 0.10,
+    "max_input_tokens": 20000,
+    "max_output_tokens": 8000,
+    "max_context_tokens": 16000,
+    "max_tool_calls": 20,
+    "max_latency_ms": 12000,
+    "max_retries": 2
+  },
+  {
+    "budget_id": "tenant-a-prod-default",
+    "tenant_id": "tenant-a",
+    "environment": "prod",
+    "max_cost": 0.05,
+    "max_input_tokens": 12000,
+    "max_output_tokens": 5000,
+    "max_context_tokens": 10000,
+    "max_tool_calls": 8,
+    "max_latency_ms": 10000,
+    "max_retries": 1
+  }
+]

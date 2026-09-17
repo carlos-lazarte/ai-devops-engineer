@@ -1,0 +1,11 @@
+type: object
+required: [model_id, task_class, success, safety_pass, latency_ms, estimated_cost]
+properties:
+  model_id: {type: string}
+  task_class: {type: string}
+  success: {type: boolean}
+  safety_pass: {type: boolean}
+  grounding_rate: {type: number}
+  latency_ms: {type: number}
+  estimated_cost: {type: number}
+  timestamp: {type: string}

@@ -1,0 +1,14 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Normalized Event
+type: object
+required: [event_id, timestamp, tenant_id, environment, component, metric_family, condition]
+properties:
+  event_id: {type: string}
+  timestamp: {type: number}
+  tenant_id: {type: string}
+  environment: {type: string}
+  component: {type: string}
+  metric_family: {type: string}
+  condition: {type: string}
+  severity_hint: {type: string}
+  source: {type: string}

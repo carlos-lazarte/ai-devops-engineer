@@ -1,0 +1,18 @@
+policy_version: "1.0"
+defaults:
+  decision: deny
+constraints:
+  production_execution_enabled: false
+  require_registered_model: true
+  minimum_quality_for_critical: critical
+  max_cost_per_1k_tokens: 0.02
+  max_latency_ms: 12000
+rules:
+  - id: no_unregistered_model
+    effect: deny
+  - id: critical_task_requires_critical_tier
+    effect: require
+  - id: no_authorization_by_model
+    effect: deny
+  - id: no_external_execution
+    effect: deny

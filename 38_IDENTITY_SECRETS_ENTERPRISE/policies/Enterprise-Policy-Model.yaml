@@ -1,0 +1,31 @@
+version: "1.0"
+default_decision: deny
+
+roles:
+  viewer:
+    allowed_risks: [low]
+  analyst:
+    allowed_risks: [low, medium]
+  operator:
+    allowed_risks: [low, medium, high]
+
+tool_policies:
+  search_notes:
+    risk: low
+  read_note:
+    risk: low
+  retrieve_runbook:
+    risk: low
+  create_draft:
+    risk: medium
+  propose_change:
+    risk: high
+    requires_approval: true
+  execute_change:
+    risk: critical
+    enabled: false
+
+tenancy:
+  require_tenant_id: true
+  require_environment: true
+  cross_tenant_default: false

@@ -1,0 +1,12 @@
+type: object
+required: [task_id, decision, policy_checked, routing_mode]
+properties:
+  task_id: {type: string}
+  decision: {type: string, enum: [selected, blocked]}
+  selected_model: {type: string}
+  routing_mode: {type: string, enum: [static, adaptive]}
+  policy_checked: {type: boolean}
+  candidates:
+    type: array
+    items: {type: object}
+  reason: {type: string}

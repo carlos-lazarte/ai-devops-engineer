@@ -1,0 +1,31 @@
+{
+  "version": "1.9.0",
+  "cases": [
+    {
+      "case_id": "REL-TIMEOUT-001",
+      "pass": true,
+      "observed": "explicit_dependency_timeout"
+    },
+    {
+      "case_id": "REL-MALFORMED-001",
+      "pass": true,
+      "observed": "schema_rejection"
+    },
+    {
+      "case_id": "REL-MCP-PARTIAL-001",
+      "pass": true,
+      "observed": "partial_result_with_missing_dependency"
+    },
+    {
+      "case_id": "REL-MEMORY-ISOLATION-001",
+      "pass": true,
+      "observed": "deny"
+    },
+    {
+      "case_id": "REL-DUP-001",
+      "pass": true,
+      "observed": "deterministic_duplicate_handling"
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,13 @@
+type: object
+required: [task_id, decision, policy_checked]
+properties:
+  task_id: {type: string}
+  decision:
+    type: string
+    enum: [CONTINUE, THROTTLE, DENY, ESCALATE]
+  policy_checked: {type: boolean}
+  reasons:
+    type: array
+    items: {type: string}
+  remaining:
+    type: object

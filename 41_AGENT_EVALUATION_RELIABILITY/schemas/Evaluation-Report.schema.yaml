@@ -1,0 +1,20 @@
+---
+type: schema
+domain: ai-devops
+status: active
+tags:
+  - schema
+  - evaluation
+---
+name: EvaluationReport
+required:
+  - run_id
+  - version
+  - summary
+  - cases
+properties:
+  run_id: string
+  version: string
+  summary: object
+  cases: array[object]
+  release_gate: object

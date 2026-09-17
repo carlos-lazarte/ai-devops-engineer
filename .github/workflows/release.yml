@@ -1,0 +1,42 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: python -m pip install -r 35_RUNTIME/requirements.txt pytest pyyaml
+      - name: Verify version matches tag
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          test "v$(cat VERSION)" = "$TAG"
+      - name: Public release checks
+        run: python3 66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/scripts/release_prepare.py --root .
+      - name: Run release-aligned tests
+        run: PYTHONPATH=35_RUNTIME python -m pytest -q 30_AUTOMATION/tests 35_RUNTIME/tests 58_AUTONOMOUS_INCIDENT_DETECTION_CORRELATION/tests 59_EVENT_DRIVEN_AGENT_TRIGGERING_INCIDENT_COMMANDER/tests 61_REAL_TELEMETRY_EVENT_INGESTION/tests 62_PRODUCTION_OBSERVABILITY_CONNECTORS/tests 63_AUTOMATED_INCIDENT_INVESTIGATION/tests 64_INVESTIGATION_UI_OPERATIONAL_DASHBOARD/tests 65_PUBLIC_DEMO_GITHUB_COMMUNITY_EDITION/tests 66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/tests
+      - name: Build release archive
+        run: python3 34_DEVELOPER_EXPERIENCE/scripts/package_release.py --root . --output-dir dist
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "AI DevOps Engineer $GITHUB_REF_NAME" \
+            --generate-notes \
+            dist/AI-DevOps-Engineer-Vault-${GITHUB_REF_NAME}.zip \
+            dist/AI-DevOps-Engineer-Vault-${GITHUB_REF_NAME}.zip.sha256

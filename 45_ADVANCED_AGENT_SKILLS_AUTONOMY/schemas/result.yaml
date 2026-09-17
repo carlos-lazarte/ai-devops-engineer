@@ -1,0 +1,19 @@
+version: "1.0"
+required:
+  - task_id
+  - skill_id
+  - status
+  - facts
+  - hypotheses
+  - proposed_actions
+  - verification
+  - provenance
+fields:
+  task_id: string
+  skill_id: string
+  status: "completed|partial|blocked|failed"
+  facts: list[string]
+  hypotheses: list[string]
+  proposed_actions: list[string]
+  verification: list[string]
+  provenance: list[string]

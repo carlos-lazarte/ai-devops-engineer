@@ -1,0 +1,24 @@
+version: "3.11.0"
+name: automated-incident-investigation
+mode: advisory
+rules:
+  - id: investigation-only
+    effect: allow
+    condition: incident_trigger_eligible
+  - id: read-only-connectors
+    effect: allow
+    condition: connectors_are_read_only
+  - id: human-approval
+    effect: require
+    condition: proposed_action_changes_infrastructure
+  - id: no-production-execution
+    effect: deny
+    condition: execution_requested_by_investigator
+  - id: no-root-cause-overclaim
+    effect: require
+    condition: root_cause_statement_has_independent_evidence
+limits:
+  max_recent_events: 250
+  max_rag_results: 8
+  max_graph_items: 10
+  max_connector_pods: 100

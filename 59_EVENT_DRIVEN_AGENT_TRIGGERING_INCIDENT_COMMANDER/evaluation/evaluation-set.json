@@ -1,0 +1,6 @@
+[
+  {"case_id":"E1","incident":{"incident_id":"inc-1","tenant_id":"t1","environment":"prod","state":"CANDIDATE","severity":"warning","confidence":0.8,"signals":["e1","e2"],"candidate_reason":"correlated signals"},"expected":"auto_analysis"},
+  {"case_id":"E2","incident":{"incident_id":"inc-2","tenant_id":"t1","environment":"prod","state":"CANDIDATE","severity":"critical","confidence":0.9,"signals":["e3","e4"],"candidate_reason":"critical correlated signals"},"expected":"human_gate"},
+  {"case_id":"E3","incident":{"incident_id":"inc-3","tenant_id":"t1","environment":"prod","state":"CANDIDATE","severity":"high","confidence":0.4,"signals":["e5"],"candidate_reason":"weak confidence"},"expected":"deny"},
+  {"case_id":"E4","incident":{"incident_id":"inc-4","tenant_id":"t2","environment":"prod","state":"CANDIDATE","severity":"warning","confidence":0.8,"signals":["e6","e7"],"candidate_reason":"separate tenant"},"expected":"auto_analysis"}
+]

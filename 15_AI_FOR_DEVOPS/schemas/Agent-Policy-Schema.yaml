@@ -1,0 +1,22 @@
+version: "0.1"
+policy:
+  default: deny
+  tiers:
+    observe:
+      - search_notes
+      - read_note
+      - list_related_notes
+      - retrieve_runbook
+      - get_context_packet
+    draft:
+      - create_draft
+      - propose_patch
+    approved_change: []
+    production_execution: []
+security:
+  path_allowlist:
+    - "Vault/"
+  require_provenance: true
+  require_human_approval_for_mutation: true
+  redact_secrets: true
+  max_result_items: 20

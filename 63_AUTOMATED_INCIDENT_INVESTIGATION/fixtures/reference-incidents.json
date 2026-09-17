@@ -1,0 +1,24 @@
+[
+  {
+    "incident_id": "INC-INV-001",
+    "tenant_id": "demo-tenant",
+    "environment": "prod",
+    "state": "CANDIDATE",
+    "severity": "high",
+    "confidence": 0.91,
+    "candidate_reason": "CPU saturation, memory pressure and repeated pod restarts are temporally correlated.",
+    "signals": ["evt-cpu-001", "evt-memory-001", "evt-restart-001"],
+    "provenance": ["63_AUTOMATED_INCIDENT_INVESTIGATION/fixtures/reference-incidents.json"]
+  },
+  {
+    "incident_id": "INC-INV-002",
+    "tenant_id": "demo-tenant",
+    "environment": "lab",
+    "state": "CANDIDATE",
+    "severity": "high",
+    "confidence": 0.87,
+    "candidate_reason": "Kubernetes node transitioned to NotReady and pod availability degraded.",
+    "signals": ["evt-node-001", "evt-pod-001"],
+    "provenance": ["63_AUTOMATED_INCIDENT_INVESTIGATION/fixtures/reference-incidents.json"]
+  }
+]

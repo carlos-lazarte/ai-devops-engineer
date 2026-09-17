@@ -1,0 +1,14 @@
+type: object
+required: [scope, period, demand, capacity, headroom]
+properties:
+  scope:
+    type: object
+  period: {type: string}
+  demand:
+    type: object
+  capacity:
+    type: object
+  headroom:
+    type: object
+  recommendation:
+    type: string

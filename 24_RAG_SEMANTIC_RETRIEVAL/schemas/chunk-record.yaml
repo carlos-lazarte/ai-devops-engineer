@@ -1,0 +1,17 @@
+chunk_id: string
+source_path: string
+source_sha256: string
+title: string
+heading: string
+content: string
+type: string
+domain: string
+technology: string
+version: string
+difficulty: string
+status: string
+created: string
+updated: string
+ordinal: integer
+embedding_model: string
+indexed_at: string

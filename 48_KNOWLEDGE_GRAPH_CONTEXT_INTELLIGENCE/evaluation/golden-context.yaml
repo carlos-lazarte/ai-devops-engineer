@@ -1,0 +1,22 @@
+cases:
+  - id: CTX-K8S-001
+    query: "Kubernetes node not ready incident"
+    expected_paths:
+      - "26_OPERATIONAL_AGENT_LAB/fixtures/K8S-NOTREADY-001/node-description.txt"
+    expected_terms:
+      - kubernetes
+      - node
+      - notready
+    expected_skill: kubernetes-troubleshooting
+  - id: CTX-TLS-001
+    query: "TLS certificate renewal failure"
+    expected_terms:
+      - tls
+      - certificate
+    expected_skill: security-triage
+  - id: CTX-TF-001
+    query: "Terraform drift review"
+    expected_terms:
+      - terraform
+      - drift
+    expected_skill: terraform-review

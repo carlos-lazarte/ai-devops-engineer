@@ -1,0 +1,14 @@
+type: object
+required: [scope, risk_level, confidence]
+properties:
+  scope:
+    type: object
+  risk_level:
+    type: string
+    enum: [low, medium, high, critical]
+  confidence: {type: number}
+  likelihood: {type: number}
+  impact: {type: number}
+  recommended_investigation:
+    type: array
+    items: {type: string}

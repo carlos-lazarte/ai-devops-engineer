@@ -1,0 +1,13 @@
+type: object
+required:
+  - correlation_id
+  - agent_id
+  - status
+  - findings
+properties:
+  correlation_id: {type: string}
+  agent_id: {type: string}
+  status: {type: string, enum: [completed, partial, denied, failed]}
+  findings: {type: array}
+  delegated_tasks: {type: array}
+  references: {type: array}

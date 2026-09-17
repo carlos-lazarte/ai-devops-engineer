@@ -1,0 +1,11 @@
+version: "3.7.0"
+title: PlannerHandoff
+required: [handoff_id, incident_id, objective, constraints, policy_context]
+properties:
+  handoff_id: {type: string}
+  incident_id: {type: string}
+  objective: {type: string}
+  constraints: {type: array}
+  skill: {type: string}
+  policy_context: {type: object}
+  execution_mode: {type: string, enum: [PLAN_ONLY]}

@@ -1,0 +1,40 @@
+replicaCount: 2
+image:
+  repository: ghcr.io/example/ai-devops-runtime
+  tag: "2.1.0"
+  digest: ""
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8080
+runtime:
+  ragTopK: 5
+  productionExecutionEnabled: false
+claude:
+  apiKeySecretName: ai-devops-claude
+  apiKeySecretKey: ANTHROPIC_API_KEY
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi
+serviceAccount:
+  create: true
+  automountServiceAccountToken: false
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
+networkPolicy:
+  enabled: true
+ingress:
+  enabled: false
+  className: ""
+  host: ai-devops.example.internal
+  tls:
+    enabled: true
+    secretName: ai-devops-tls
+
+vault:
+  existingPvc: ""

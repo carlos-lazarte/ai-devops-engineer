@@ -1,0 +1,9 @@
+type: object
+required: [run_id, scenario_id, outcome, safety]
+properties:
+  run_id: {type: string}
+  scenario_id: {type: string}
+  outcome: {type: string}
+  safety: {type: string}
+  detected_fault: {type: string}
+  ground_truth_fault: {type: string}

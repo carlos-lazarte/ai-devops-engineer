@@ -1,0 +1,44 @@
+version: "1.0"
+default_effect: deny
+roles:
+  viewer:
+    allowed:
+      - search_notes
+      - read_note
+      - list_related_notes
+      - retrieve_runbook
+    max_risk: low
+  analyst:
+    allowed:
+      - search_notes
+      - read_note
+      - list_related_notes
+      - retrieve_runbook
+      - create_draft
+    max_risk: medium
+  operator:
+    allowed:
+      - search_notes
+      - read_note
+      - list_related_notes
+      - retrieve_runbook
+      - create_draft
+      - propose_change
+    max_risk: high
+
+tools:
+  search_notes: {risk: low, mode: read}
+  read_note: {risk: low, mode: read}
+  list_related_notes: {risk: low, mode: read}
+  retrieve_runbook: {risk: low, mode: read}
+  create_draft: {risk: medium, mode: draft, approval: false}
+  propose_change: {risk: high, mode: propose, approval: true}
+  execute_change: {risk: critical, mode: execute, approval: true, enabled: false}
+
+sensitive_fields:
+  - api_key
+  - access_token
+  - authorization
+  - password
+  - secret
+  - private_key

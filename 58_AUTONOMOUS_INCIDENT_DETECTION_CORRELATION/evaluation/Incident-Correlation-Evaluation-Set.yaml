@@ -1,0 +1,19 @@
+version: "3.6.0"
+ground_truth_external: true
+cases:
+  - id: burst-same-component
+    expected:
+      event_count: 3
+      one_candidate: true
+      cross_tenant_merge: false
+  - id: duplicate-burst
+    expected:
+      raw_event_count: 4
+      unique_event_count: 1
+      suppressed_count: 3
+  - id: cross-tenant
+    expected:
+      one_candidate_per_tenant: true
+  - id: separated-time
+    expected:
+      one_candidate_per_signal: true

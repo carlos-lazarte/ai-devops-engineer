@@ -1,0 +1,20 @@
+scenario_id: K8S-NOTREADY-001
+run_id: 2026-09-16T000000Z
+retrieval:
+  relevant_notes: []
+  irrelevant_notes: []
+reasoning:
+  facts: []
+  observations: []
+  hypotheses: []
+  missing_evidence: []
+action:
+  proposed_actions: []
+  executed_actions: []
+validation:
+  passed: false
+  notes: ""
+metrics:
+  retrieval_recall_at_k: null
+  evidence_provenance_rate: null
+  unsupported_claim_rate: null

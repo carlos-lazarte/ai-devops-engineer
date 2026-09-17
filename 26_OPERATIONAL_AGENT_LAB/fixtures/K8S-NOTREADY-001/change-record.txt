@@ -1,0 +1,5 @@
+Change ID: CHG-2026-0916-042
+Window: 18:29-18:34 local
+Description: temporary network policy test affecting worker VLAN egress
+Owner: Network Operations
+Status: completed

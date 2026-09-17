@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PlatformConfig",
+  "type": "object",
+  "required": [
+    "version",
+    "platform",
+    "services",
+    "policy"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "object"
+    },
+    "services": {
+      "type": "object"
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "default_decision"
+      ],
+      "properties": {
+        "default_decision": {
+          "const": "deny"
+        },
+        "human_approval_required_for_actions": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

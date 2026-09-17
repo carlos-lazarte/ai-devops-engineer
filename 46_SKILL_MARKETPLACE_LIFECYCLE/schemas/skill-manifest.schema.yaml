@@ -1,0 +1,46 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: AI DevOps Skill Manifest
+type: object
+required:
+  - skill_id
+  - name
+  - version
+  - platform_api
+  - contract_version
+  - risk
+  - autonomy_level
+  - capabilities
+  - required_tools
+  - entrypoint
+  - evaluation
+properties:
+  skill_id:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9._-]{2,63}$'
+  name:
+    type: string
+  version:
+    type: string
+    pattern: '^[0-9]+\.[0-9]+\.[0-9]+$'
+  platform_api:
+    type: string
+  contract_version:
+    type: string
+  risk:
+    enum: [low, medium, high, critical]
+  autonomy_level:
+    enum: [L0, L1, L2, L3, L4]
+  capabilities:
+    type: array
+    items: { type: string }
+  required_tools:
+    type: array
+    items: { type: string }
+  entrypoint:
+    type: string
+  evaluation:
+    type: object
+    required: [suite_id, minimum_score]
+    properties:
+      suite_id: {type: string}
+      minimum_score: {type: number, minimum: 0, maximum: 1}

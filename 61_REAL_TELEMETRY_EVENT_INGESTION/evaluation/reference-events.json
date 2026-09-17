@@ -1,0 +1,5 @@
+[
+  {"event_id":"ref-cpu","timestamp":1900000000,"tenant_id":"demo-tenant","environment":"lab","component":"node-01","metric_family":"cpu","condition":"high","severity_hint":"high","value":95,"source":"reference"},
+  {"event_id":"ref-memory","timestamp":1900000020,"tenant_id":"demo-tenant","environment":"lab","component":"node-01","metric_family":"memory","condition":"high","severity_hint":"high","value":92,"source":"reference"},
+  {"event_id":"ref-restart","timestamp":1900000040,"tenant_id":"demo-tenant","environment":"lab","component":"payments-api","metric_family":"pod_restart","condition":"high","severity_hint":"high","value":27,"source":"reference"}
+]

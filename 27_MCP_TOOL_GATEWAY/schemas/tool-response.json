@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ToolResponse",
+  "type": "object",
+  "required": ["request_id", "status"],
+  "properties": {
+    "request_id": {"type": "string"},
+    "status": {"enum": ["ok", "error", "denied"]},
+    "error_code": {"type": ["string", "null"]},
+    "provenance": {"type": "array", "items": {"type": "string"}},
+    "truncated": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

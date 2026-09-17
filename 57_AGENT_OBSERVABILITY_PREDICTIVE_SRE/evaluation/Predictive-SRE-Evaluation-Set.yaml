@@ -1,0 +1,11 @@
+- id: PRED-001
+  case: correlated latency and tool-call growth
+  expected_state: PREDICTED
+
+- id: PRED-002
+  case: single low deviation
+  expected_state: OBSERVED
+
+- id: PRED-003
+  case: high risk
+  expected_review: true

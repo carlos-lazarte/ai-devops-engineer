@@ -1,0 +1,25 @@
+- id: PLAN-K8S-001
+  task: diagnose Kubernetes node not ready incident
+  expected_skills:
+    - kubernetes-troubleshooting
+  required_evidence:
+    - node status
+    - kubelet logs
+    - recent change context
+  must_be_plan_only: true
+
+- id: PLAN-TLS-001
+  task: investigate TLS certificate failure after rotation
+  required_evidence:
+    - certificate metadata
+    - endpoint verification
+    - recent rotation record
+  must_be_plan_only: true
+
+- id: PLAN-TF-001
+  task: investigate Terraform drift before proposing a change
+  required_evidence:
+    - terraform plan
+    - state context
+    - change history
+  must_be_plan_only: true

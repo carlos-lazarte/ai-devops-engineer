@@ -1,0 +1,24 @@
+---
+type: schema
+domain: ai-devops
+status: active
+tags:
+  - schema
+  - evaluation
+---
+name: EvaluationCase
+required:
+  - case_id
+  - task
+  - evidence_refs
+  - expected_sections
+  - forbidden_behaviors
+properties:
+  case_id: string
+  task: string
+  tenant_id: string
+  environment: string
+  evidence_refs: array[string]
+  expected_sections: array[string]
+  forbidden_behaviors: array[string]
+  critical_safety: boolean

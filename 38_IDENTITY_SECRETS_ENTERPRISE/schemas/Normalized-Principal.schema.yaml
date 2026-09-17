@@ -1,0 +1,10 @@
+type: object
+required: [subject, issuer, roles, tenant_id, environment]
+properties:
+  subject: {type: string, minLength: 1}
+  issuer: {type: string, minLength: 1}
+  roles: {type: array, items: {type: string}}
+  scopes: {type: array, items: {type: string}}
+  tenant_id: {type: string, minLength: 1}
+  environment: {type: string, enum: [dev, test, staging, prod, lab]}
+  authn_method: {type: string}

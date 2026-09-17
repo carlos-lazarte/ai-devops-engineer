@@ -1,0 +1,21 @@
+version: "1.0"
+default_decision: deny
+execution:
+  production_enabled: false
+  destructive_enabled: false
+  shell_enabled: false
+  ssh_enabled: false
+  kubernetes_mutation_enabled: false
+  cloud_mutation_enabled: false
+approval:
+  required_for:
+    - high
+    - critical
+  binding_fields:
+    - task_id
+    - tenant_id
+    - environment
+    - proposed_action
+isolation:
+  tenant: strict
+  environment: strict

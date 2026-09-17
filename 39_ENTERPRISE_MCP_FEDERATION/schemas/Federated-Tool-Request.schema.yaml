@@ -1,0 +1,16 @@
+type: object
+required:
+  - correlation_id
+  - server_id
+  - tool
+  - tenant_id
+  - environment
+  - risk
+properties:
+  correlation_id: {type: string}
+  server_id: {type: string}
+  tool: {type: string}
+  tenant_id: {type: string}
+  environment: {type: string}
+  risk: {type: string, enum: [low, medium, high, critical]}
+  approval_id: {type: [string, 'null']}

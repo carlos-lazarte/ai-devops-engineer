@@ -1,0 +1,9 @@
+policy_version: "1.0"
+default_decision: deny
+requirements:
+  signature_verified: true
+  checksum_verified: true
+  compatibility_verified: true
+  evaluation_verified: true
+  approval_required_for_high_risk: true
+  allow_critical_autonomy: false

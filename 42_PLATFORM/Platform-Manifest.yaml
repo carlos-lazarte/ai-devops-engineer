@@ -1,0 +1,13 @@
+version: "2.0.0"
+stable_api: "v1"
+components:
+  vault: "1.x content baseline"
+  runtime: "2.0"
+  rag: "existing v1.x contract"
+  agent: "existing v1.x contract"
+  mcp: "existing v1.x contract"
+  memory: "existing v1.x contract"
+  policy: "existing v1.x contract"
+  observability: "existing v1.x contract"
+execution: disabled
+conformance: required

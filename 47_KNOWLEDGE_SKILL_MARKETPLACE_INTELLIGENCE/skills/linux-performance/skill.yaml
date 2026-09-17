@@ -1,0 +1,34 @@
+skill_id: linux-performance
+name: Linux Performance Analysis
+version: 1.0.0
+platform_api: "v1"
+contract_version: "1.0"
+domain: linux
+risk: medium
+autonomy_level: L2
+capabilities:
+  - analyze_linux_performance
+required_tools:
+  - search_notes
+  - read_note
+entrypoint: skill_runtime:linux-performance.run
+evaluation:
+  suite_id: EVAL-LINUX-PERFORMANCE-001
+  minimum_score: 0.90
+
+# v2.5.0 discovery metadata
+keywords:
+  - linux
+  - cpu
+  - memory
+  - performance
+  - load
+  - process
+environments:
+  - lab
+  - test
+  - staging
+  - prod
+dependencies:
+
+status: published

@@ -1,0 +1,21 @@
+type: object
+required:
+  - task_id
+  - action_id
+  - status
+  - verification_status
+properties:
+  task_id:
+    type: string
+  action_id:
+    type: string
+  status:
+    type: string
+    enum: [simulated, executed, rejected, failed]
+  verification_status:
+    type: string
+    enum: [VERIFIED, FAILED, UNKNOWN, NOT_RUN]
+  audit_event_id:
+    type: string
+  replanning_required:
+    type: boolean

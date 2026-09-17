@@ -1,0 +1,26 @@
+[
+  {
+    "scenario_id": "TWIN-K8S-001",
+    "domain": "kubernetes",
+    "expected_fault": "FAULT-K8S-001",
+    "critical": true
+  },
+  {
+    "scenario_id": "TWIN-TLS-001",
+    "domain": "tls",
+    "expected_fault": "FAULT-TLS-001",
+    "critical": true
+  },
+  {
+    "scenario_id": "TWIN-DNS-001",
+    "domain": "networking",
+    "expected_fault": "FAULT-DNS-001",
+    "critical": true
+  },
+  {
+    "scenario_id": "TWIN-TF-001",
+    "domain": "terraform",
+    "expected_fault": "FAULT-TF-001",
+    "critical": false
+  }
+]

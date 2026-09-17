@@ -1,0 +1,19 @@
+type: object
+required:
+  - correlation_id
+  - task_id
+  - principal
+  - tenant_id
+  - environment
+  - requested_agent
+  - goal
+properties:
+  correlation_id: {type: string}
+  task_id: {type: string}
+  principal: {type: string}
+  tenant_id: {type: string}
+  environment: {type: string}
+  requested_agent: {type: string}
+  goal: {type: string}
+  allowed_hops: {type: integer, minimum: 0, maximum: 2}
+  approval_id: {type: [string, 'null']}

@@ -1,0 +1,14 @@
+api_version: v1
+product_version: 3.8.0
+edition: community-local
+execution:
+  production_execution_enabled: false
+  approval_required_for_change: true
+storage:
+  primary: postgresql
+  test_fallback: sqlite
+services:
+  - product-api
+  - postgres
+  - redis
+  - existing-ai-runtime

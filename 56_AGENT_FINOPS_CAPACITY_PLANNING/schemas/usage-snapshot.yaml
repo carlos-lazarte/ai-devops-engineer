@@ -1,0 +1,12 @@
+type: object
+required: [tenant_id, environment, period_start, period_end]
+properties:
+  tenant_id: {type: string}
+  environment: {type: string}
+  period_start: {type: string}
+  period_end: {type: string}
+  input_tokens: {type: integer}
+  output_tokens: {type: integer}
+  tool_calls: {type: integer}
+  estimated_cost: {type: number}
+  latency_ms_total: {type: number}

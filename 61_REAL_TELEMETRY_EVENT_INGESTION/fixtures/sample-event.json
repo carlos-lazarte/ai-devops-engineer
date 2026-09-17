@@ -1,0 +1,12 @@
+{
+  "event_id": "demo-otlp-001",
+  "timestamp": 1900000000,
+  "tenant_id": "demo-tenant",
+  "environment": "lab",
+  "component": "node-01",
+  "metric_family": "cpu",
+  "condition": "high",
+  "severity_hint": "high",
+  "value": 95,
+  "source": "demo"
+}

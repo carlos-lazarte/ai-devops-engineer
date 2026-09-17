@@ -1,0 +1,6 @@
+[
+  {"event_id":"evt-001","timestamp":1000,"tenant_id":"tenant-a","environment":"prod","component":"api","metric_family":"latency","condition":"high","severity_hint":"critical","source":"prometheus"},
+  {"event_id":"evt-002","timestamp":1030,"tenant_id":"tenant-a","environment":"prod","component":"db","metric_family":"errors","condition":"high","severity_hint":"critical","source":"prometheus","topology_neighbors":["api"]},
+  {"event_id":"evt-003","timestamp":1040,"tenant_id":"tenant-a","environment":"prod","component":"api","metric_family":"latency","condition":"high","severity_hint":"critical","source":"prometheus"},
+  {"event_id":"evt-004","timestamp":1050,"tenant_id":"tenant-b","environment":"prod","component":"api","metric_family":"latency","condition":"high","severity_hint":"warning","source":"prometheus"}
+]

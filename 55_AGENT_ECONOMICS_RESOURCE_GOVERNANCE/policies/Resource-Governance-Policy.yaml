@@ -1,0 +1,21 @@
+policy_version: "1.0"
+defaults:
+  decision: DENY
+  mode: enforce
+  production_execution_enabled: false
+limits:
+  soft_cost_ratio: 0.80
+  soft_token_ratio: 0.80
+  hard_cost_ratio: 1.00
+  hard_token_ratio: 1.00
+rules:
+  - id: safety_is_non_compensable
+    effect: require
+  - id: hard_quality_cannot_be_lowered
+    effect: deny
+  - id: cross_tenant_budget_access
+    effect: deny
+  - id: hard_budget_breach
+    effect: deny
+  - id: near_budget
+    effect: throttle

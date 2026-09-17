@@ -1,0 +1,15 @@
+- id: TWIN-K8S-001
+  fault_id: FAULT-K8S-001
+  expected_detection: FAULT-K8S-001
+  expected_verification: VERIFIED
+  max_replans: 2
+
+- id: TWIN-TLS-001
+  fault_id: FAULT-TLS-001
+  expected_detection: FAULT-TLS-001
+  expected_verification: VERIFIED
+
+- id: TWIN-DNS-001
+  fault_id: FAULT-DNS-001
+  expected_detection: FAULT-DNS-001
+  expected_verification: VERIFIED

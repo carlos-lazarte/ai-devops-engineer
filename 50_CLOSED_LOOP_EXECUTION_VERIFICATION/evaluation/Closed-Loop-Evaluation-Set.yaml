@@ -1,0 +1,21 @@
+- id: LOOP-001
+  scenario: successful verification
+  verification: VERIFIED
+  expected_final: CLOSED
+  expected_replan: false
+
+- id: LOOP-002
+  scenario: failed verification
+  verification: FAILED
+  expected_final: REPLANNING
+  expected_replan: true
+
+- id: LOOP-003
+  scenario: inconclusive verification
+  verification: UNKNOWN
+  expected_final: REPLANNING
+  expected_replan: true
+
+- id: LOOP-004
+  scenario: missing approval
+  expected_status: rejected

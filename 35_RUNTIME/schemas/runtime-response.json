@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RuntimeResponse",
+  "type": "object",
+  "required": ["request_id", "status"],
+  "properties": {
+    "request_id": {"type": "string"},
+    "status": {"enum": ["ok", "error"]},
+    "error_code": {"type": ["string", "null"]},
+    "approval_required": {"type": ["boolean", "null"]}
+  },
+  "additionalProperties": true
+}

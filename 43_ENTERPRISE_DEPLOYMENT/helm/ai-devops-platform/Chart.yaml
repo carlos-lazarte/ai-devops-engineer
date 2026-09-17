@@ -1,0 +1,6 @@
+apiVersion: v2
+name: ai-devops-platform
+description: Enterprise deployment chart for the AI DevOps Platform runtime
+version: 0.1.0
+appVersion: "2.1.0"
+type: application

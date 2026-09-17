@@ -1,0 +1,25 @@
+registry_version: "1.0"
+models:
+  - model_id: claude-reference-advanced
+    provider: anthropic
+    quality_tier: advanced
+    capabilities: [reasoning, technical-analysis, structured-output]
+    estimated_cost_per_1k_tokens: 0.01
+    estimated_latency_ms: 3500
+    regions: [global]
+
+  - model_id: local-reference-standard
+    provider: local
+    quality_tier: standard
+    capabilities: [summarization, classification, structured-output]
+    estimated_cost_per_1k_tokens: 0.0
+    estimated_latency_ms: 1500
+    regions: [local]
+
+  - model_id: critical-reference
+    provider: reference
+    quality_tier: critical
+    capabilities: [reasoning, technical-analysis, structured-output, critical-evaluation]
+    estimated_cost_per_1k_tokens: 0.015
+    estimated_latency_ms: 7000
+    regions: [global]

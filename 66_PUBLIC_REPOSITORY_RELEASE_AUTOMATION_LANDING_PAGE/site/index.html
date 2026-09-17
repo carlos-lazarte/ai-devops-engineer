@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI DevOps Engineer — evidence-first incident investigation with human-controlled action.">
+  <title>AI DevOps Engineer — Community Edition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand">AI DevOps Engineer <span>Community Edition</span></div>
+  <nav><a href="#how">How it works</a><a href="#architecture">Architecture</a><a href="#editions">Editions</a><a href="#quickstart">Quickstart</a></nav>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">LOCAL-FIRST • OPEN COMMUNITY REFERENCE</p>
+    <h1>Investigate infrastructure incidents with <em>evidence</em>, context and human-controlled action.</h1>
+    <p class="lead">AI DevOps Engineer connects observability, incident correlation, runbooks, RAG, agent planning and verification into one operational workflow.</p>
+    <div class="actions"><a class="button primary" id="repo-link" href="#">View on GitHub</a><a class="button" href="#quickstart">Run the demo</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="signal"><span></span>Incident candidate detected</div>
+    <div class="flow"><b>Telemetry</b><i>→</i><b>Correlation</b><i>→</i><b>Investigation</b><i>→</i><b>Plan</b></div>
+    <div class="approval"><small>HUMAN CONTROL</small><strong>Human approval required before execution</strong></div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <p class="eyebrow">THE WORKFLOW</p><h2>From signal to verified action</h2>
+  <div class="grid six">
+    <article><b>01 Observe</b><p>Prometheus, OpenTelemetry and bounded infrastructure connectors provide evidence.</p></article>
+    <article><b>02 Correlate</b><p>Temporal and topology-aware signals become an incident candidate.</p></article>
+    <article><b>03 Investigate</b><p>RAG, skills and knowledge context structure the investigation.</p></article>
+    <article><b>04 Plan</b><p>The planner produces an explicit, reviewable plan.</p></article>
+    <article><b>05 Approve</b><p>Policy, identity and human approval remain the authorization boundary.</p></article>
+    <article><b>06 Verify</b><p>Results are checked and recorded instead of assuming success.</p></article>
+  </div>
+</section>
+
+<section id="architecture" class="section dark">
+  <p class="eyebrow">ARCHITECTURE</p><h2>One operational loop, explicit safety boundaries</h2>
+  <pre>Telemetry → Event Correlation → Incident Candidate
+                         ↓
+             Automated Investigation
+                         ↓
+              Evidence + Hypotheses
+                         ↓
+                Planner / Policy
+                         ↓
+                 Human Approval
+                         ↓
+                 Action / Verify</pre>
+  <p class="note">The Community Edition reference runtime keeps infrastructure connectors read-only and production execution disabled.</p>
+</section>
+
+<section class="section split">
+  <div><p class="eyebrow">WHY IT IS DIFFERENT</p><h2>Designed around operational evidence, not just chat.</h2></div>
+  <div class="list"><p><strong>Facts stay separate from hypotheses.</strong> Investigations preserve evidence and provenance.</p><p><strong>Tools stay behind a policy boundary.</strong> Credentials are not authorization.</p><p><strong>Simulation stays reproducible.</strong> The public demo does not require production infrastructure or a model API key.</p></div>
+</section>
+
+<section id="editions" class="section">
+  <p class="eyebrow">PRODUCT PATH</p><h2>Community → Pro → Enterprise</h2>
+  <div class="cards">
+    <article class="card"><h3>Community</h3><p>Public reference runtime, knowledge, skills, simulator, connectors and reproducible demo.</p><a href="#quickstart">Start locally →</a></article>
+    <article class="card"><h3>Pro</h3><p>Future commercial edition for teams: richer integrations, collaboration and operational workflows.</p><span>Customer discovery</span></article>
+    <article class="card"><h3>Enterprise</h3><p>Future commercial edition for controlled deployments, identity, governance, support and integration.</p><span>Talk to us</span></article>
+  </div>
+</section>
+
+<section id="quickstart" class="section cta">
+  <p class="eyebrow">5-MINUTE DEMO</p><h2>Run the Community Edition locally.</h2>
+  <pre>git clone &lt;repository&gt;
+cd ai-devops-engineer
+./65_PUBLIC_DEMO_GITHUB_COMMUNITY_EDITION/demo/run_demo.sh</pre>
+  <div class="actions"><a class="button primary" id="repo-link-2" href="#">Open repository</a><a class="button" href="#architecture">Read architecture</a></div>
+</section>
+</main>
+<footer>AI DevOps Engineer Community Edition 3.14.0 · Reference implementation · Validate security, capacity and compliance for each target environment.</footer>
+<script src="config.js"></script>
+<script>
+  const url = window.AIOPS_CONFIG.repositoryUrl;
+  document.getElementById('repo-link').href = url;
+  document.getElementById('repo-link-2').href = url;
+</script>
+</body>
+</html>

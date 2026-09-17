@@ -1,0 +1,3 @@
+2026-09-16T18:31:01Z kubelet[1842]: failed to update node status: context deadline exceeded
+2026-09-16T18:31:07Z kubelet[1842]: node lease update failed: Put "https://10.0.0.1:6443/apis/coordination.k8s.io/v1/namespaces/kube-node-lease/leases/worker-03": dial tcp 10.0.0.1:6443: i/o timeout
+2026-09-16T18:31:20Z kubelet[1842]: node became not ready

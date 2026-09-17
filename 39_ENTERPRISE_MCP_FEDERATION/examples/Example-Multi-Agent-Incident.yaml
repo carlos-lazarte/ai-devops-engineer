@@ -1,0 +1,15 @@
+correlation_id: demo-incident-001
+tenant_id: lab-tenant
+environment: lab
+principal: demo-user
+root_agent: sre
+goal: "Analyze a simulated Kubernetes NodeNotReady incident"
+plan:
+  - agent: sre
+    role: incident-coordination
+  - agent: devops
+    role: kubernetes-diagnostics
+mcp_servers:
+  - vault-knowledge
+approval_required_for: [propose_change, execute_change]
+execution_mode: dry-run

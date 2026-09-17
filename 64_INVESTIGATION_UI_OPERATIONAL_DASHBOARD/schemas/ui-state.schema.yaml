@@ -1,0 +1,8 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: UI State
+type: object
+properties:
+  selected_incident_id: {type: [string, 'null']}
+  selected_investigation_id: {type: [string, 'null']}
+  tenant_filter: {type: [string, 'null']}
+  auto_refresh_seconds: {type: integer, minimum: 0, maximum: 300}

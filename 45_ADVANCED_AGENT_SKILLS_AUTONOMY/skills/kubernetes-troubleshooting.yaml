@@ -1,0 +1,15 @@
+skill_id: "kubernetes-troubleshooting"
+version: "1.0"
+goal: "Provide a bounded Kubernetes capability for DevOps operations"
+domains: ["Kubernetes"]
+required_evidence: ["task_context", "relevant_operational_evidence"]
+allowed_tools: ["search_notes", "read_note", "retrieve_runbook"]
+forbidden_actions: ["shell", "ssh", "production_mutation", "secret_read"]
+risk: "high"
+autonomy_level: "L3"
+output_schema: "../schemas/result.yaml"
+verification:
+  - "Every material claim must reference evidence"
+  - "Proposed actions must be marked as proposals"
+  - "Verify assumptions before escalation"
+notes: "describe pod/node, events, logs, manifests; propose remediation after evidence review"

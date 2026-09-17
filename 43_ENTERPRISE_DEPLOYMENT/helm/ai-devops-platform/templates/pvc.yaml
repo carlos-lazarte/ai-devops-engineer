@@ -1,0 +1,14 @@
+{{- if not .Values.vault.existingPvc }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "ai-devops.fullname" . }}-vault
+  labels:
+    {{- include "ai-devops.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadOnlyMany
+  resources:
+    requests:
+      storage: 1Gi
+{{- end }}

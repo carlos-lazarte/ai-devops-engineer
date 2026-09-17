@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: aiops
+      POSTGRES_USER: aiops
+      POSTGRES_PASSWORD: aiops
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aiops -d aiops"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+
+  app:
+    build:
+      context: ..
+      dockerfile: 35_RUNTIME/Dockerfile
+    environment:
+      RUNTIME_HOST: 0.0.0.0
+      RUNTIME_PORT: 8080
+      VAULT_ROOT: /vault
+      DATABASE_URL: postgresql://aiops:aiops@postgres:5432/aiops
+      AUDIT_LOG: /app/runtime-data/audit.jsonl
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-}
+      PROMETHEUS_URL: ${PROMETHEUS_URL:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    volumes:
+      - runtime_data:/app/runtime-data
+
+volumes:
+  postgres_data:
+  redis_data:

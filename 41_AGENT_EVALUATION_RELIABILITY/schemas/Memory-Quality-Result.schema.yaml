@@ -1,0 +1,17 @@
+---
+type: schema
+domain: ai-devops
+status: active
+tags:
+  - schema
+  - memory
+---
+name: MemoryQualityResult
+required:
+  - memory_id
+  - checks
+  - pass
+properties:
+  memory_id: string
+  checks: object
+  pass: boolean

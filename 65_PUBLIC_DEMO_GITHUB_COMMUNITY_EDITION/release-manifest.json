@@ -1,0 +1,24 @@
+{
+  "version": "3.13.0",
+  "edition": "Community Edition",
+  "release_name": "Public Demo & GitHub Community Edition",
+  "demo": {
+    "entrypoint": "65_PUBLIC_DEMO_GITHUB_COMMUNITY_EDITION/demo/run_demo.sh",
+    "uses_synthetic_data": true,
+    "requires_model_api_key": false,
+    "default_port": 18080
+  },
+  "execution": {
+    "production_enabled": false,
+    "mode": "approval-gated",
+    "connectors": "read-only"
+  },
+  "publication": {
+    "github_ready": true,
+    "auto_published": false,
+    "license": "Apache-2.0"
+  },
+  "quality": {
+    "local_release_check": "65_PUBLIC_DEMO_GITHUB_COMMUNITY_EDITION/scripts/public-check.sh"
+  }
+}

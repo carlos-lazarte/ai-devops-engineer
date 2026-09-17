@@ -1,0 +1,21 @@
+policy_version: "1.0"
+defaults:
+  execution_mode: plan_only
+  decision: deny
+constraints:
+  production_execution_enabled: false
+  simulation_enabled: true
+  require_explicit_approval: true
+  require_predeclared_verification: true
+  max_replan_attempts: 2
+rules:
+  - id: execution_requires_registered_tool
+    effect: deny
+  - id: execution_requires_approval
+    effect: require_approval
+  - id: verification_required
+    effect: require_verification
+  - id: failed_verification_must_not_close
+    effect: deny
+  - id: production_execution_disabled
+    effect: deny

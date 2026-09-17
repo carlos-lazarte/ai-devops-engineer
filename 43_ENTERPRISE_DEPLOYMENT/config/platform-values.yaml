@@ -1,0 +1,54 @@
+# Reference values. Replace image repository/tag/digest and environment-specific endpoints.
+replicaCount: 2
+image:
+  repository: ghcr.io/example/ai-devops-runtime
+  tag: "2.1.0"
+  digest: ""
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: ""
+  host: ai-devops.example.internal
+  tls:
+    enabled: true
+    secretName: ai-devops-tls
+
+runtime:
+  vaultRoot: /vault
+  host: 0.0.0.0
+  port: 8080
+  ragTopK: 5
+  productionExecutionEnabled: false
+
+claude:
+  model: ""
+  apiKeySecretName: ai-devops-claude
+  apiKeySecretKey: ANTHROPIC_API_KEY
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
+
+serviceAccount:
+  create: true
+  automountServiceAccountToken: false
+
+networkPolicy:
+  enabled: true
+
+vault:
+  existingPvc: ""
+  mountPath: /vault

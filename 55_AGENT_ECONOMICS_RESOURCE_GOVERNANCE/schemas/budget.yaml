@@ -1,0 +1,17 @@
+type: object
+required: [budget_id, scope, limits]
+properties:
+  budget_id: {type: string}
+  scope:
+    type: object
+    required: [tenant_id, environment]
+  limits:
+    type: object
+    properties:
+      max_cost: {type: number}
+      max_input_tokens: {type: integer}
+      max_output_tokens: {type: integer}
+      max_context_tokens: {type: integer}
+      max_tool_calls: {type: integer}
+      max_latency_ms: {type: integer}
+      max_retries: {type: integer}

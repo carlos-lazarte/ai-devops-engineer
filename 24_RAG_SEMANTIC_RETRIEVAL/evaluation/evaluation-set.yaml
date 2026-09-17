@@ -1,0 +1,32 @@
+# Small starter set. Expand this before production use.
+- id: kubernetes-node-notready
+  query: "Kubernetes node is NotReady after maintenance. What evidence should I collect first?"
+  expected_sources:
+    - 16_TROUBLESHOOTING/Troubleshooting-Kubernetes-Node-NotReady.md
+    - 17_RUNBOOKS/Runbook-Kubernetes-Node-Recovery.md
+  optional_metadata_filters:
+    technology: kubernetes
+
+- id: linux-disk-full
+  query: "Linux filesystem is full. How do I diagnose and recover safely?"
+  expected_sources:
+    - 16_TROUBLESHOOTING/Troubleshooting-Linux-Disk-Full.md
+    - 17_RUNBOOKS/Runbook-Linux-Disk-Recovery.md
+  optional_metadata_filters:
+    technology: linux
+
+- id: tls-incident
+  query: "A TLS endpoint fails after certificate rotation. What should be validated?"
+  expected_sources:
+    - 16_TROUBLESHOOTING/Troubleshooting-TLS-Certificate.md
+    - 17_RUNBOOKS/Runbook-TLS-Certificate-Renewal.md
+  optional_metadata_filters:
+    technology: tls
+
+- id: terraform-drift
+  query: "Terraform reports drift. What should I check before applying changes?"
+  expected_sources:
+    - 16_TROUBLESHOOTING/Troubleshooting-Terraform-Drift.md
+    - 20_PROMPT_LIBRARY/Prompt-Terraform-Plan-Analysis.md
+  optional_metadata_filters:
+    technology: terraform

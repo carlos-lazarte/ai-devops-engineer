@@ -1,0 +1,17 @@
+skill_id: terraform-review
+name: Terraform Plan Review
+version: 1.0.0
+platform_api: "v1"
+contract_version: "1.0"
+domain: terraform
+risk: medium
+autonomy_level: L2
+capabilities:
+  - review_terraform_plan
+required_tools:
+  - search_notes
+  - read_note
+entrypoint: skill_runtime:terraform-review.run
+evaluation:
+  suite_id: EVAL-TERRAFORM-REVIEW-001
+  minimum_score: 0.90

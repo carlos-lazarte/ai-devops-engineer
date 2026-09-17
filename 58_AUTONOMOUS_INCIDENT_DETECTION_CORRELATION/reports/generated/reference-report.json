@@ -1,0 +1,9 @@
+{
+  "version": "3.6.0",
+  "mode": "simulation",
+  "candidate_count": 1,
+  "suppressed_event_count": 1,
+  "cross_tenant_merge": false,
+  "human_review_required": true,
+  "production_execution_enabled": false
+}

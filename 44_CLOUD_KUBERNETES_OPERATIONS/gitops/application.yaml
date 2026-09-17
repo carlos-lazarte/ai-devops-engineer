@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ai-devops-platform
+spec:
+  project: default
+  source:
+    repoURL: https://example.invalid/REPLACE_ME
+    targetRevision: main
+    path: 43_ENTERPRISE_DEPLOYMENT/kubernetes/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ai-devops
+  syncPolicy:
+    automated: false

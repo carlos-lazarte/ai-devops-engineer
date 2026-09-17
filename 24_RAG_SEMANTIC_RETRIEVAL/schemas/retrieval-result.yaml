@@ -1,0 +1,12 @@
+query: string
+results:
+  - chunk_id: string
+    source_path: string
+    heading: string
+    score: number
+    content: string
+    metadata: object
+retriever:
+  embedding_model: string
+  top_k: integer
+  filters: object

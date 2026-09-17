@@ -1,0 +1,12 @@
+# Example configuration. Values are intentionally provider-neutral.
+vault_path: ./
+index_path: ./_rag/index
+embedding_model: local-model
+chunking:
+  max_chars: 3500
+  overlap_chars: 350
+retrieval:
+  top_k: 8
+  rerank_top_n: 5
+filters:
+  status: active

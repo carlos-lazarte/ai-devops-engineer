@@ -1,7 +1,17 @@
 # Governance
 
-The project uses a maintainer-led model while the Community Edition is in its early public phase.
+AI DevOps Engineer Community Edition is developed through transparent source changes, tests and reviewable pull requests.
 
-Changes should preserve deterministic behavior, provenance, tenant isolation and the separation between reasoning and authorization.
+## Decision principles
 
-Roadmap items are discussed openly and may change based on technical validation and community feedback.
+1. Safety boundaries are explicit and tested.
+2. Evidence must be distinguishable from hypotheses.
+3. Backward compatibility is preferred when it does not weaken security.
+4. Changes should be reproducible locally and in CI.
+5. Operational behavior should be documented before release.
+
+## Maintainer responsibilities
+
+Maintainers review security, correctness, tests, documentation and release impact. Major architectural changes should include a short design note and migration guidance.
+
+This file describes the current Community Edition process and does not create legal governance rights outside the project.

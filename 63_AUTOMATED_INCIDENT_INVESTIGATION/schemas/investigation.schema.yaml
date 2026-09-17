@@ -1,0 +1,27 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Automated Incident Investigation
+type: object
+required:
+  - investigation_id
+  - incident_id
+  - tenant_id
+  - environment
+  - status
+  - mode
+  - evidence
+  - hypotheses
+  - unknowns
+  - safety
+properties:
+  investigation_id: {type: string}
+  incident_id: {type: string}
+  tenant_id: {type: string}
+  environment: {type: string}
+  status: {type: string, enum: [ANALYZED]}
+  mode: {type: string, enum: [dry-run, claude]}
+  evidence: {type: array}
+  hypotheses: {type: array}
+  unknowns: {type: array, items: {type: string}}
+  safety:
+    type: object
+    required: [production_execution_enabled, human_approval_required, root_cause_confirmed]

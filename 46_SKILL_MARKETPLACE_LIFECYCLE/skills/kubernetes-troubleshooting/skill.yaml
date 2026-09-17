@@ -1,0 +1,17 @@
+skill_id: kubernetes-troubleshooting
+name: Kubernetes Troubleshooting
+version: 1.0.0
+platform_api: "v1"
+contract_version: "1.0"
+domain: kubernetes
+risk: high
+autonomy_level: L3
+capabilities:
+  - diagnose_kubernetes_incident
+required_tools:
+  - search_notes
+  - read_note
+entrypoint: skill_runtime:kubernetes-troubleshooting.run
+evaluation:
+  suite_id: EVAL-KUBERNETES-TROUBLESHOOTING-001
+  minimum_score: 0.90

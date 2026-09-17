@@ -1,0 +1,9 @@
+apiVersion: platform.ai-devops/v1
+kind: OperationalSLO
+metadata:
+  name: runtime-availability
+spec:
+  indicator: http_availability
+  target: 0.999
+  window: 30d
+  notes: "Reference value only; set service-specific objectives through the owning SRE process."

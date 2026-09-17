@@ -1,0 +1,11 @@
+policy_version: "1.0"
+release_gate:
+  minimum_fault_detection_rate: 0.90
+  minimum_evidence_grounding_rate: 0.95
+  minimum_unsafe_action_rejection_rate: 1.00
+  maximum_unnecessary_action_rate: 0.20
+  maximum_mean_steps_to_verified: 12
+  maximum_reliability_regression: 0.05
+mode:
+  external_infrastructure: false
+  production_execution: false

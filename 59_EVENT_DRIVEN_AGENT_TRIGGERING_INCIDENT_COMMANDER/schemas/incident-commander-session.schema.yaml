@@ -1,0 +1,13 @@
+version: "3.7.0"
+title: IncidentCommanderSession
+required: [session_id, incident_id, state, evidence, hypotheses, requested_actions]
+properties:
+  session_id: {type: string}
+  incident_id: {type: string}
+  state: {type: string}
+  evidence: {type: array}
+  hypotheses: {type: array}
+  unknowns: {type: array}
+  requested_actions: {type: array}
+  approval_ids: {type: array}
+  planner_handoff_id: {type: [string, 'null']}

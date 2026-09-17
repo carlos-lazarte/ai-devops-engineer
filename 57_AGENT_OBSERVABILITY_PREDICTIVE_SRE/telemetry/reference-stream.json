@@ -1,0 +1,6 @@
+[
+  {"metric":"agent_latency_ms","value":1800,"baseline":1200},
+  {"metric":"tool_calls_per_task","value":8,"baseline":4},
+  {"metric":"grounding_rate","value":0.94,"baseline":0.99},
+  {"metric":"cost_per_task","value":0.020,"baseline":0.010}
+]

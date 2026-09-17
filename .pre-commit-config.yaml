@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: validate-vault
+        name: Validate Vault
+        entry: python 30_AUTOMATION/validate_vault.py --root .
+        language: system
+        pass_filenames: false
+      - id: secret-scan
+        name: Secret pattern scan
+        entry: python 30_AUTOMATION/validate_vault.py --root .
+        language: system
+        pass_filenames: false

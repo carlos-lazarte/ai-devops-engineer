@@ -1,0 +1,15 @@
+- id: ECON-001
+  scenario: within budget
+  expected_decision: CONTINUE
+
+- id: ECON-002
+  scenario: near cost budget
+  expected_decision: THROTTLE
+
+- id: ECON-003
+  scenario: hard token breach
+  expected_decision: DENY
+
+- id: ECON-004
+  scenario: cross-tenant budget request
+  expected_decision: DENY

@@ -1,0 +1,20 @@
+version: "1.0"
+servers:
+  - server_id: vault-knowledge
+    owner: platform
+    trust_zone: internal
+    environments: [lab, test, staging, prod]
+    enabled: true
+    capabilities: [search_notes, read_note, retrieve_runbook]
+  - server_id: security-tools
+    owner: security
+    trust_zone: restricted
+    environments: [lab, test]
+    enabled: false
+    capabilities: [security_findings]
+  - server_id: cloud-readonly
+    owner: cloud
+    trust_zone: restricted
+    environments: [lab, test, staging]
+    enabled: false
+    capabilities: [resource_inventory, iam_context]

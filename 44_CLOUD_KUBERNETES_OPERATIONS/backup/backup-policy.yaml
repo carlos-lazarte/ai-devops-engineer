@@ -1,0 +1,13 @@
+apiVersion: backup.ai-devops/v1
+kind: BackupPolicy
+metadata:
+  name: runtime-state
+spec:
+  include:
+    - agent-memory
+    - audit-store
+    - rag-index
+  frequency: daily
+  retention: 30d
+  encryption: required
+  restoreTest: monthly

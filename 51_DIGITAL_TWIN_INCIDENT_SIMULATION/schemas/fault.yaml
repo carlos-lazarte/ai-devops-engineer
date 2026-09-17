@@ -1,0 +1,15 @@
+type: object
+required:
+  - fault_id
+  - target
+  - effect
+  - reset
+properties:
+  fault_id:
+    type: string
+  target:
+    type: string
+  effect:
+    type: object
+  reset:
+    type: object

@@ -1,0 +1,21 @@
+{
+  "scenario_id": "TWIN-K8S-001",
+  "name": "Synthetic Kubernetes NodeNotReady",
+  "twin_id": "k8s-lab-01",
+  "components": [
+    {"id": "node-01", "kind": "kubernetes-node", "state": "healthy"},
+    {"id": "kubelet-01", "kind": "kubelet", "state": "healthy"},
+    {"id": "network-01", "kind": "network", "state": "healthy"}
+  ],
+  "fault": {
+    "fault_id": "FAULT-K8S-001",
+    "target": "node-01",
+    "degraded_state": "not_ready",
+    "symptom_metric": "kube_node_status_condition{condition=NotReady}=1",
+    "symptom_log": "kubelet reports node condition NotReady"
+  },
+  "verification": {
+    "target": "node-01",
+    "expected_state": "healthy"
+  }
+}

@@ -1,0 +1,25 @@
+version: "3.7.0"
+policy_id: event-driven-agent-default
+mode: simulation
+trigger:
+  allowed_candidate_states: [CANDIDATE, TRIAGED, INVESTIGATING]
+  min_confidence: 0.55
+  high_or_critical_requires_human: true
+  cross_tenant_trigger: false
+  deduplicate_by_incident_id: true
+commander:
+  create_on_trigger: true
+  require_evidence_pack: true
+  unknowns_must_be_explicit: true
+approval:
+  analysis_requires_approval: false
+  mutation_requires_approval: true
+  approval_must_be_scoped: true
+safety:
+  production_execution_enabled: false
+  trigger_grants_authorization: false
+  incident_severity_grants_authorization: false
+  planner_handoff_grants_authorization: false
+  prediction_is_ground_truth: false
+budget:
+  budget_check_required: true

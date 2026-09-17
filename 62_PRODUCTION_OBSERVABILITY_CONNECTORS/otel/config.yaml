@@ -1,0 +1,26 @@
+# Reference OpenTelemetry Collector configuration.
+# Pin the collector image version in your deployment rather than consuming :latest.
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4318
+processors:
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 256
+  batch:
+    timeout: 5s
+exporters:
+  otlphttp/ai_devops:
+    endpoint: http://ai-devops-runtime:8080/api/v1/telemetry/otlp
+    headers:
+      X-AIOPS-Tenant: ${AIOPS_TENANT_ID}
+      X-AIOPS-Environment: ${AIOPS_ENVIRONMENT}
+      X-AIOPS-Severity: info
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [otlphttp/ai_devops]

@@ -1,0 +1,13 @@
+principal:
+  subject: user-123
+  issuer: https://idp.example.invalid
+  roles: [analyst]
+  tenant_id: acme
+  environment: lab
+
+tenant_id: acme
+environment: lab
+tool: retrieve_runbook
+operation: read
+risk: low
+approval_id: null

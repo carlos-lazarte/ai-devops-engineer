@@ -1,0 +1,24 @@
+type: object
+required:
+  - scenario_id
+  - status
+  - verification_status
+properties:
+  scenario_id:
+    type: string
+  status:
+    type: string
+    enum: [completed, failed, reset]
+  verification_status:
+    type: string
+    enum: [VERIFIED, FAILED, UNKNOWN, NOT_RUN]
+  ground_truth_fault:
+    type: string
+  detected_fault:
+    type: string
+  replanning_required:
+    type: boolean
+  actions:
+    type: array
+    items:
+      type: object

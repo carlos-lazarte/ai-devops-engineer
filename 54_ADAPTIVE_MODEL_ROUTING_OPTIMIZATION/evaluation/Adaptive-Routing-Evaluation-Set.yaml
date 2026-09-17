@@ -1,0 +1,11 @@
+- id: ROUTE-STD-001
+  task_class: standard
+  expected_model: local-reference-standard
+
+- id: ROUTE-ADV-001
+  task_class: advanced
+  expected_model: claude-reference-advanced
+
+- id: ROUTE-CRIT-001
+  task_class: critical
+  expected_model: critical-reference

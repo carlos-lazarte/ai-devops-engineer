@@ -1,0 +1,10 @@
+type: object
+required: [task_id, task, task_class, environment]
+properties:
+  task_id: {type: string}
+  task: {type: string}
+  task_class: {type: string}
+  environment: {type: string}
+  min_quality_tier: {type: string}
+  max_cost_per_1k_tokens: {type: number}
+  max_latency_ms: {type: number}

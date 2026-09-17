@@ -1,0 +1,11 @@
+{
+  "incident_id": "inc-candidate-0001",
+  "tenant_id": "demo",
+  "environment": "prod-sim",
+  "state": "CANDIDATE",
+  "severity": "critical",
+  "confidence": 0.92,
+  "signals": ["evt-100", "evt-101", "evt-102"],
+  "candidate_reason": "three related high-impact signals in the same operational scope",
+  "provenance": [{"source":"digital-twin","scenario":"db-latency-spike"}]
+}

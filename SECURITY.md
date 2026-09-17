@@ -1,11 +1,13 @@
 # Security Policy
 
-AI DevOps Engineer Community Edition is a reference implementation. Do not connect it to production systems without independent security review.
+## Scope
 
-## Reporting
+Security issues include authentication bypasses, tenant-isolation failures, unintended infrastructure mutation, credential leakage, unsafe connector behavior and vulnerabilities that could cause unauthorized execution.
 
-Please report suspected vulnerabilities privately to the repository maintainer rather than opening a public issue with exploitable details.
+## Responsible disclosure
 
-## Safety boundary
+Do not publish credentials, production data or exploit instructions in a public issue. Use the repository's private security reporting mechanism when available, or contact the maintainers privately through the project owner.
 
-The Community runtime keeps infrastructure connectors read-only and production execution disabled by default. Model output is not an authorization mechanism.
+## Security boundary
+
+The Community Edition reference runtime keeps production execution disabled. Connectors are read-only by default, and the approval boundary remains separate from model output.

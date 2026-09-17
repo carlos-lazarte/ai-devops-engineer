@@ -1,0 +1,10 @@
+policy_version: "1.0"
+default_decision: deny
+allow_discovery: true
+allow_unverified_skills: false
+allow_retired_skills: false
+allow_critical_autonomy: false
+require_policy_check_before_selection: true
+require_dependency_policy_check: true
+max_selected_skills: 4
+execution_mode: plan_only

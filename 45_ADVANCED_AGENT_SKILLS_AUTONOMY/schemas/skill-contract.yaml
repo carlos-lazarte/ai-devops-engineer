@@ -1,0 +1,25 @@
+version: "1.0"
+required:
+  - skill_id
+  - version
+  - goal
+  - domains
+  - required_evidence
+  - allowed_tools
+  - forbidden_actions
+  - risk
+  - autonomy_level
+  - output_schema
+  - verification
+fields:
+  skill_id: string
+  version: string
+  goal: string
+  domains: list[string]
+  required_evidence: list[string]
+  allowed_tools: list[string]
+  forbidden_actions: list[string]
+  risk: "low|medium|high|critical"
+  autonomy_level: "L0|L1|L2|L3|L4"
+  output_schema: string
+  verification: list[string]

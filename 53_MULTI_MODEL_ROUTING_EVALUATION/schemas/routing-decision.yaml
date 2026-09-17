@@ -1,0 +1,12 @@
+type: object
+required: [task_id, decision, policy_checked]
+properties:
+  task_id: {type: string}
+  decision: {type: string, enum: [selected, blocked]}
+  selected_model: {type: string}
+  candidates:
+    type: array
+    items:
+      type: object
+  policy_checked: {type: boolean}
+  reason: {type: string}

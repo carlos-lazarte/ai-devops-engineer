@@ -1,0 +1,4 @@
+dependency:
+  skill_id: string
+  version_constraint: string
+  optional: boolean

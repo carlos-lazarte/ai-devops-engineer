@@ -1,0 +1,27 @@
+version: "2.0"
+platform:
+  api_version: "v1"
+  environment: "lab"
+  default_action_tier: "draft"
+  production_execution_enabled: false
+services:
+  runtime: true
+  rag: true
+  agent: true
+  mcp: true
+  memory: true
+  policy: true
+  audit: true
+  observability: true
+identity:
+  provider: "external"
+  mode: "oidc"
+secrets:
+  provider: "external"
+  values_in_vault: false
+policy:
+  default_decision: "deny"
+  human_approval_required_for_actions: true
+observability:
+  metrics: true
+  audit_events: true

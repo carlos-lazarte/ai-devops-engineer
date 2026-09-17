@@ -1,0 +1,26 @@
+name: validate-vault
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: python -m pip install -r 24_RAG_SEMANTIC_RETRIEVAL/scripts/requirements.txt pytest pyyaml
+      - name: Validate structure
+        run: python 30_AUTOMATION/validate_vault.py --root .
+      - name: Run tests
+        run: python -m pytest -q 27_MCP_TOOL_GATEWAY/tests 28_CLAUDE_E2E/tests 30_AUTOMATION/tests
+      - name: Build RAG index
+        run: python 24_RAG_SEMANTIC_RETRIEVAL/scripts/build_index.py --vault . --index .rag-index
+      - name: RAG regression
+        run: python 34_DEVELOPER_EXPERIENCE/scripts/rag_regression.py --root . --index .rag-index
+      - name: Release package dry check
+        run: python 34_DEVELOPER_EXPERIENCE/scripts/package_release.py --root . --output-dir dist

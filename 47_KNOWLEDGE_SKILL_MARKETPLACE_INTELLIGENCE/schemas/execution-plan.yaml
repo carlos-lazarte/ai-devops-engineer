@@ -1,0 +1,7 @@
+version: "1.0"
+task_id: string
+selected_skills: []
+steps: []
+policy_checked: boolean
+requires_human_approval: boolean
+execution_mode: plan_only

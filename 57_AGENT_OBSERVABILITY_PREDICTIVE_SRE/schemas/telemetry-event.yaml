@@ -1,0 +1,13 @@
+type: object
+required: [timestamp, tenant_id, environment, metric, value]
+properties:
+  timestamp: {type: string}
+  tenant_id: {type: string}
+  environment: {type: string}
+  agent_id: {type: string}
+  model_id: {type: string}
+  skill_id: {type: string}
+  tool_id: {type: string}
+  metric: {type: string}
+  value: {type: number}
+  provenance: {type: string}

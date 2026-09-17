@@ -1,0 +1,22 @@
+policy_version: "1.0"
+mode:
+  adaptive_enabled: true
+  external_exploration_enabled: false
+  production_execution_enabled: false
+constraints:
+  max_staleness_days: 30
+  minimum_observations: 2
+  max_cost_per_1k_tokens: 0.02
+  max_latency_ms: 12000
+weights:
+  quality: 0.45
+  reliability: 0.30
+  latency: 0.15
+  cost: 0.10
+rules:
+  - id: hard_constraints_before_ranking
+    effect: require
+  - id: safety_is_non_compensable
+    effect: require
+  - id: stale_history_fallback
+    effect: static_route

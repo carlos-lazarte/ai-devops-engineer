@@ -1,0 +1,19 @@
+version: "1.0"
+required:
+  - task_id
+  - skill_id
+  - risk
+  - autonomy_level
+  - evidence_refs
+  - steps
+  - verification
+  - approval_required
+fields:
+  task_id: string
+  skill_id: string
+  risk: string
+  autonomy_level: string
+  evidence_refs: list[string]
+  steps: list[string]
+  verification: list[string]
+  approval_required: boolean

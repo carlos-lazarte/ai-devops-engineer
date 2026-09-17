@@ -1,0 +1,11 @@
+type: object
+required: [scope, metric, observed, baseline, severity]
+properties:
+  scope:
+    type: object
+  metric: {type: string}
+  observed: {type: number}
+  baseline: {type: number}
+  deviation_ratio: {type: number}
+  severity: {type: string, enum: [info, warning, critical]}
+  provenance: {type: string}

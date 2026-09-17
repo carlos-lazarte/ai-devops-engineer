@@ -1,0 +1,17 @@
+version: "1.0"
+default_decision: deny
+retention:
+  working_hours: 24
+  episodic_days: 180
+promotion:
+  automatic: false
+  requires_human_review: true
+retrieval:
+  require_tenant_match: true
+  require_environment_match: true
+  include_unverified: false
+authorization:
+  memory_never_grants_tool_access: true
+privacy:
+  secrets_allowed: false
+  credentials_allowed: false

@@ -1,0 +1,10 @@
+version: "3.7.0"
+title: ApprovalRequest
+required: [request_id, incident_id, action, scope, requested_by]
+properties:
+  request_id: {type: string}
+  incident_id: {type: string}
+  action: {type: string}
+  scope: {type: object}
+  requested_by: {type: string}
+  decision: {type: string, enum: [PENDING, APPROVED, REJECTED, EXPIRED]}

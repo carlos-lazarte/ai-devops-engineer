@@ -1,0 +1,17 @@
+title: Telemetry Ingestion Request
+oneOf:
+  - required: [event]
+  - required: [events]
+  - required: [query, tenant_id, environment]
+properties:
+  event: {type: object}
+  events:
+    type: array
+    items: {type: object}
+  query: {type: string}
+  tenant_id: {type: string}
+  environment: {type: string}
+  component_label: {type: string}
+  metric_family: {type: string}
+  condition: {type: string}
+  severity_hint: {enum: [info, warning, high, critical]}

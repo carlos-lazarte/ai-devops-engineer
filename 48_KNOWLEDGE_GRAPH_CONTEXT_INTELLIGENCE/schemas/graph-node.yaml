@@ -1,0 +1,22 @@
+type: object
+required:
+  - node_id
+  - path
+  - title
+properties:
+  node_id:
+    type: string
+  path:
+    type: string
+  title:
+    type: string
+  type:
+    type: [string, "null"]
+  domain:
+    type: [string, "null"]
+  technology:
+    type: [string, "null"]
+  tags:
+    type: array
+  links:
+    type: array

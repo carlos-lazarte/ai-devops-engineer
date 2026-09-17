@@ -1,0 +1,22 @@
+version: "1.0"
+agents:
+  - agent_id: devops
+    display_name: DevOps Agent
+    domains: [linux, kubernetes, networking, infrastructure, ci_cd]
+    max_delegation_depth: 2
+    enabled: true
+  - agent_id: sre
+    display_name: SRE Agent
+    domains: [incident, observability, reliability]
+    max_delegation_depth: 2
+    enabled: true
+  - agent_id: security
+    display_name: Security Agent
+    domains: [security, identity, secrets, policy]
+    max_delegation_depth: 2
+    enabled: true
+  - agent_id: cloud
+    display_name: Cloud Agent
+    domains: [aws, azure, oci, iam]
+    max_delegation_depth: 2
+    enabled: true

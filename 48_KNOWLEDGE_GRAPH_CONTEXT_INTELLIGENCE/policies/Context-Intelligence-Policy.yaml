@@ -1,0 +1,12 @@
+version: "1.0"
+defaults:
+  max_graph_hops: 2
+  max_knowledge_items: 12
+  max_skill_candidates: 4
+  max_evidence_items: 8
+  include_unlinked_notes: true
+security:
+  retrieval_grants_authorization: false
+  memory_grants_authorization: false
+  cross_tenant_isolation_required: true
+  infrastructure_mutation_enabled: false

@@ -1,0 +1,19 @@
+policy_version: "1.0"
+defaults:
+  mode: plan_only
+  decision: deny
+constraints:
+  max_steps: 12
+  max_graph_hops: 2
+  max_skill_candidates: 4
+  max_tools_per_step: 3
+  production_execution_enabled: false
+rules:
+  - id: no_authority_from_memory
+    effect: deny
+  - id: no_authority_from_retrieval
+    effect: deny
+  - id: high_risk_requires_approval
+    effect: require_approval
+  - id: critical_execution_disabled
+    effect: deny

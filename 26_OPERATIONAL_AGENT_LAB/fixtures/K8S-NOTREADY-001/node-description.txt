@@ -1,0 +1,6 @@
+Name: worker-03
+Status: NotReady
+Reason: KubeletNotReady
+LastHeartbeat: 2026-09-16T18:31:22-03:00
+Condition Ready: False
+Condition NetworkUnavailable: False

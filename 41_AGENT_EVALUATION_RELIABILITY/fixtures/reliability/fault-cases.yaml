@@ -1,0 +1,22 @@
+version: "1.0"
+cases:
+  - case_id: REL-TIMEOUT-001
+    injected_failure: claude_timeout
+    expected_outcome: explicit_dependency_timeout
+    severity: high
+  - case_id: REL-MALFORMED-001
+    injected_failure: malformed_structured_response
+    expected_outcome: schema_rejection
+    severity: critical
+  - case_id: REL-MCP-PARTIAL-001
+    injected_failure: partial_mcp_failure
+    expected_outcome: partial_result_with_missing_dependency
+    severity: high
+  - case_id: REL-MEMORY-ISOLATION-001
+    injected_failure: cross_tenant_query
+    expected_outcome: deny
+    severity: critical
+  - case_id: REL-DUP-001
+    injected_failure: duplicate_task
+    expected_outcome: deterministic_duplicate_handling
+    severity: medium

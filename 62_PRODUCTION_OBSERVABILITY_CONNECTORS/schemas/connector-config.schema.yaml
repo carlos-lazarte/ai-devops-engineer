@@ -1,0 +1,12 @@
+title: Production Observability Connector Configuration
+required: [name, type, mode]
+properties:
+  name: {type: string}
+  type: {enum: [prometheus, opentelemetry, kubernetes, linux]}
+  mode: {enum: [read-only, receiver]}
+  endpoint: {type: string}
+  credential_ref: {type: string}
+  timeout_seconds: {type: number, minimum: 0.1, maximum: 60}
+  max_response_bytes: {type: integer, minimum: 1024, maximum: 10000000}
+  rate_per_second: {type: number, minimum: 0.01, maximum: 100}
+  retries: {type: integer, minimum: 1, maximum: 6}

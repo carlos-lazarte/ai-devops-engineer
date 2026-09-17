@@ -1,0 +1,15 @@
+skill_id: "incident-coordination"
+version: "1.0"
+goal: "Provide a bounded SRE capability for DevOps operations"
+domains: ["SRE"]
+required_evidence: ["task_context", "relevant_operational_evidence"]
+allowed_tools: ["search_notes", "read_note", "retrieve_runbook"]
+forbidden_actions: ["shell", "ssh", "production_mutation", "secret_read"]
+risk: "medium"
+autonomy_level: "L2"
+output_schema: "../schemas/result.yaml"
+verification:
+  - "Every material claim must reference evidence"
+  - "Proposed actions must be marked as proposals"
+  - "Verify assumptions before escalation"
+notes: "timeline, alerts, incident notes; produce coordination plan"

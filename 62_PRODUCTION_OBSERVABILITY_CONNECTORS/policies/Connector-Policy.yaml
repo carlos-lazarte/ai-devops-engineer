@@ -1,0 +1,26 @@
+name: production-observability-connector-policy
+version: 1
+rules:
+  - id: telemetry-read-only
+    effect: allow
+    scope: [prometheus, kubernetes, linux]
+    capabilities: [read]
+  - id: otel-receiver-only
+    effect: allow
+    scope: [opentelemetry]
+    capabilities: [ingest]
+  - id: no-command-execution
+    effect: deny
+    capability: [shell, exec, kubectl_exec, remote_command]
+  - id: no-secret-from-payload
+    effect: deny
+    capability: [credential_override]
+  - id: tenant-required
+    effect: deny
+    condition: tenant_id_missing
+  - id: environment-required
+    effect: deny
+    condition: environment_missing
+  - id: human-approval
+    effect: require
+    scope: remediation

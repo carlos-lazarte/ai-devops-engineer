@@ -1,0 +1,11 @@
+version: "1.0"
+task_id: string
+query: string
+candidates:
+  - skill_id: string
+    version: string
+    score: number
+    status: string
+    reasons: []
+    policy_decision: eligible|blocked|incompatible|dependency_failed
+selected_skill_ids: []

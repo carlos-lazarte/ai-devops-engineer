@@ -1,0 +1,11 @@
+type: object
+required: [run_id, model_id, scenario_id]
+properties:
+  run_id: {type: string}
+  model_id: {type: string}
+  scenario_id: {type: string}
+  task_success: {type: boolean}
+  grounding_rate: {type: number}
+  safety_pass: {type: boolean}
+  latency_ms: {type: number}
+  estimated_cost: {type: number}

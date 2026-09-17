@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "ai-devops.fullname" . }}-config
+  labels:
+    {{- include "ai-devops.labels" . | nindent 4 }}
+data:
+  VAULT_ROOT: /vault
+  RUNTIME_HOST: 0.0.0.0
+  RUNTIME_PORT: "8080"
+  RAG_TOP_K: {{ .Values.runtime.ragTopK | quote }}
+  PRODUCTION_EXECUTION_ENABLED: {{ .Values.runtime.productionExecutionEnabled | quote }}

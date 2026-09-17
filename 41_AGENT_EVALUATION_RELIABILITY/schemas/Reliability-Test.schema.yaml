@@ -1,0 +1,18 @@
+---
+type: schema
+domain: sre
+status: active
+tags:
+  - schema
+  - reliability
+---
+name: ReliabilityTestCase
+required:
+  - case_id
+  - injected_failure
+  - expected_outcome
+properties:
+  case_id: string
+  injected_failure: string
+  expected_outcome: string
+  severity: string

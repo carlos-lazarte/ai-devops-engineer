@@ -1,0 +1,23 @@
+type: object
+required:
+  - task_id
+  - action_id
+  - tool_id
+  - environment
+  - approval_id
+properties:
+  task_id:
+    type: string
+  action_id:
+    type: string
+  tool_id:
+    type: string
+  environment:
+    type: string
+  approval_id:
+    type: string
+  mode:
+    type: string
+    enum: [simulate, approved_execution]
+  parameters:
+    type: object

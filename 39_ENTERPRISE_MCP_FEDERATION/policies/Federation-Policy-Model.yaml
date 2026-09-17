@@ -1,0 +1,26 @@
+version: "1.0"
+default_decision: deny
+max_delegation_depth: 2
+max_agents_per_task: 4
+
+agent_to_agent:
+  allowed: true
+  requires_same_tenant: true
+  requires_same_environment: true
+
+mcp_federation:
+  require_registered_server: true
+  require_enabled_server: true
+  require_capability_match: true
+  trust_inheritance: false
+
+tool_risk:
+  low:
+    allowed_roles: [viewer, analyst, operator]
+  medium:
+    allowed_roles: [analyst, operator]
+  high:
+    allowed_roles: [operator]
+    requires_approval: true
+  critical:
+    enabled: false

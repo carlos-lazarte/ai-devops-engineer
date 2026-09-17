@@ -1,5 +1,9 @@
 # License
 
-AI DevOps Engineer Community Edition is released under the Apache License 2.0. See the `LICENSE` file in the distribution for the full license text.
+The AI DevOps Engineer Community Edition source distribution is licensed under the Apache License 2.0.
 
-The project name, logos and branding are not granted by the software license except where explicitly stated.
+See [`LICENSE`](LICENSE) for the complete license text.
+
+The project name, logo and branding are not granted for unrestricted trademark use merely by using the software license.
+
+**This is a packaging choice for the Community Edition reference distribution. Review it with appropriate legal counsel before a public commercial launch.**

@@ -1,0 +1,12 @@
+{
+  "title": "AI DevOps Runtime Overview",
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {"type":"stat","title":"Availability","gridPos":{"h":4,"w":6,"x":0,"y":0},"targets":[{"expr":"100 * sum(rate(ai_devops_http_requests_total{status_class=\"2xx\"}[5m])) / sum(rate(ai_devops_http_requests_total[5m]))","refId":"A"}]},
+    {"type":"timeseries","title":"Request Rate","gridPos":{"h":8,"w":12,"x":0,"y":4},"targets":[{"expr":"sum by (route) (rate(ai_devops_http_requests_total[5m]))","refId":"A"}]},
+    {"type":"timeseries","title":"5xx Rate","gridPos":{"h":8,"w":12,"x":12,"y":4},"targets":[{"expr":"sum by (route) (rate(ai_devops_http_requests_total{status_class=\"5xx\"}[5m]))","refId":"A"}]},
+    {"type":"timeseries","title":"p95 Latency","gridPos":{"h":8,"w":12,"x":0,"y":12},"targets":[{"expr":"histogram_quantile(0.95, sum by (le, route) (rate(ai_devops_http_request_duration_seconds_bucket[5m])))","refId":"A"}]},
+    {"type":"timeseries","title":"In-flight Requests","gridPos":{"h":8,"w":12,"x":12,"y":12},"targets":[{"expr":"ai_devops_http_inflight_requests","refId":"A"}]}
+  ]
+}

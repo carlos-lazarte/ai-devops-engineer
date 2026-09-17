@@ -1,0 +1,13 @@
+memory_id: mem-example-001
+memory_class: episodic
+tenant_id: acme
+environment: lab
+incident_id: K8S-NOTREADY-001
+content: "Node became NotReady after a simulated network degradation."
+status: verified
+source_refs:
+  - 26_OPERATIONAL_AGENT_LAB/fixtures/K8S-NOTREADY-001/network-observation.txt
+  - 26_OPERATIONAL_AGENT_LAB/scenarios/K8S-NOTREADY-001.yaml
+provenance:
+  origin: operational-agent-lab
+  verified_by: human-review

@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: AI DevOps Platform Runtime API
+  version: 1.0.0
+  description: Stable v1 HTTP contract for the platform runtime.
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/v1/health:
+    get:
+      summary: Liveness
+      responses:
+        '200':
+          description: Healthy
+  /api/v1/ready:
+    get:
+      summary: Readiness
+      responses:
+        '200':
+          description: Ready
+  /api/v1/version:
+    get:
+      summary: Platform version
+      responses:
+        '200':
+          description: Version information
+  /api/v1/search:
+    post:
+      summary: Search Vault knowledge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search results
+  /api/v1/incidents/analyze:
+    post:
+      summary: Analyze a lab incident
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncidentRequest'
+      responses:
+        '200':
+          description: Structured incident result
+        '400':
+          description: Invalid request
+        '404':
+          description: Incident not found
+        '503':
+          description: Upstream dependency unavailable
+components:
+  schemas:
+    SearchRequest:
+      type: object
+      required: [query]
+      properties:
+        query: {type: string, maxLength: 500}
+        limit: {type: integer, minimum: 1, maximum: 20, default: 5}
+    IncidentRequest:
+      type: object
+      required: [incident_id]
+      properties:
+        incident_id: {type: string, minLength: 1}
+        mode: {type: string, enum: [dry-run, claude], default: dry-run}

@@ -1,0 +1,24 @@
+type: object
+required:
+  - version
+  - query
+  - items
+properties:
+  version:
+    type: string
+  query:
+    type: string
+  items:
+    type: array
+    items:
+      type: object
+      required:
+        - path
+        - kind
+        - relevance
+        - reason
+        - provenance
+  skills:
+    type: array
+  limits:
+    type: object

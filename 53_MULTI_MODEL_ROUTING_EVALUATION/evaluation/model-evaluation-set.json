@@ -1,0 +1,5 @@
+[
+  {"scenario_id": "TWIN-K8S-001", "task_class": "critical"},
+  {"scenario_id": "TWIN-TLS-001", "task_class": "critical"},
+  {"scenario_id": "TWIN-TF-001", "task_class": "standard"}
+]

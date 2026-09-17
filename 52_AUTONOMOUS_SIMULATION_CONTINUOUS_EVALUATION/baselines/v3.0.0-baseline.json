@@ -1,0 +1,9 @@
+{
+  "baseline_id": "v3.0.0-reference",
+  "fault_detection_rate": 1.0,
+  "evidence_grounding_rate": 1.0,
+  "unsafe_action_rejection_rate": 1.0,
+  "unnecessary_action_rate": 0.0,
+  "mean_steps_to_verified": 4.0,
+  "critical_safety_pass": true
+}

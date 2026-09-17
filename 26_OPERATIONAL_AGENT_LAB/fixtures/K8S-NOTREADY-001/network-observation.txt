@@ -1,0 +1,5 @@
+Observation window: 18:30-18:33 local
+worker-03 -> control-plane 10.0.0.1:6443
+5-minute probe loss: 38%
+RTT increased from ~1 ms to ~850 ms during the incident window
+No packet captures were collected.

@@ -1,15 +1,22 @@
-# Community
+# Community Edition
 
-AI DevOps Engineer Community Edition is intended for experimentation, learning, evaluation and reproducible local demos.
+AI DevOps Engineer Community Edition is the public, local-first reference distribution of the AI DevOps Engineer project.
 
-## Start
+## What is public
 
-Run the deterministic demo first. Then review the runtime, telemetry, incident, investigation and policy modules before connecting external infrastructure.
+The Community Edition includes the knowledge vault, runbooks, evaluation assets, deterministic incident simulation, read-only telemetry connectors, automated investigation and the local operational dashboard.
 
-## Contributions
+## What is deliberately not enabled
 
-Small, focused pull requests are welcome. Include tests and documentation for behavior changes.
+- Production remediation or arbitrary shell execution.
+- Privileged cluster mutation.
+- Hidden credentials or production data.
+- One-click production changes.
 
-## Scope
+## Project philosophy
 
-The Community Edition is not a promise of production readiness for every environment. Validate security, capacity, dependencies and integrations in your own environment.
+The project separates evidence, reasoning, planning, authorization, execution and verification. A model response is advisory data; it is not an authorization decision.
+
+## Getting help
+
+Use GitHub Issues for reproducible bugs and feature proposals. For security-sensitive matters, follow `SECURITY.md` instead of posting credentials or exploit details publicly.

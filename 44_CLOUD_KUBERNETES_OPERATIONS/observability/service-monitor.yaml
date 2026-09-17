@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: ai-devops-runtime
+  labels:
+    app.kubernetes.io/part-of: ai-devops-platform
+spec:
+  selector:
+    matchLabels:
+      app: ai-devops-runtime
+  endpoints:
+    - port: http
+      path: /api/v1/metrics
+      interval: 30s

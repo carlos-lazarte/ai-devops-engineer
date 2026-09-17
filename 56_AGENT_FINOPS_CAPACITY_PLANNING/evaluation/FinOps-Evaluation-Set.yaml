@@ -1,0 +1,15 @@
+- id: FINOPS-001
+  case: spend within plan
+  expected: normal
+
+- id: FINOPS-002
+  case: spend 1.6x baseline
+  expected: warning
+
+- id: FINOPS-003
+  case: spend 2.1x baseline
+  expected: critical
+
+- id: FINOPS-004
+  case: capacity below 20 percent headroom
+  expected: review

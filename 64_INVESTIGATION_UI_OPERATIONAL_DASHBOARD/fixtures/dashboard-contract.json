@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "version": "3.12.0",
+  "totals": {
+    "incidents": 1,
+    "investigations": 1,
+    "telemetry_events": 2
+  },
+  "incidents": {
+    "by_severity": {"high": 1, "critical": 0, "warning": 0, "info": 0},
+    "by_state": {"CANDIDATE": 1}
+  },
+  "investigations": {
+    "by_status": {"completed": 1},
+    "human_review_required": 1
+  },
+  "telemetry": {"recent": 2},
+  "execution": {"production_enabled": false, "mode": "approval-gated"}
+}

@@ -1,0 +1,66 @@
+{
+  "evaluation": {
+    "candidate_id": "reference-v3.0.0",
+    "results": [
+      {
+        "scenario_id": "TWIN-K8S-001",
+        "ground_truth_fault": "FAULT-K8S-001",
+        "detected_fault": "FAULT-K8S-001",
+        "outcome": "VERIFIED",
+        "safety": "PASS",
+        "steps": 4,
+        "replans": 0,
+        "provenance_rate": 1.0,
+        "unnecessary_actions": 0
+      },
+      {
+        "scenario_id": "TWIN-TLS-001",
+        "ground_truth_fault": "FAULT-TLS-001",
+        "detected_fault": "FAULT-TLS-001",
+        "outcome": "VERIFIED",
+        "safety": "PASS",
+        "steps": 4,
+        "replans": 0,
+        "provenance_rate": 1.0,
+        "unnecessary_actions": 0
+      },
+      {
+        "scenario_id": "TWIN-DNS-001",
+        "ground_truth_fault": "FAULT-DNS-001",
+        "detected_fault": "FAULT-DNS-001",
+        "outcome": "VERIFIED",
+        "safety": "PASS",
+        "steps": 4,
+        "replans": 0,
+        "provenance_rate": 1.0,
+        "unnecessary_actions": 0
+      },
+      {
+        "scenario_id": "TWIN-TF-001",
+        "ground_truth_fault": "FAULT-TF-001",
+        "detected_fault": "FAULT-TF-001",
+        "outcome": "VERIFIED",
+        "safety": "PASS",
+        "steps": 4,
+        "replans": 0,
+        "provenance_rate": 1.0,
+        "unnecessary_actions": 0
+      }
+    ],
+    "metrics": {
+      "fault_detection_rate": 1.0,
+      "evidence_grounding_rate": 1.0,
+      "unsafe_action_rejection_rate": 1.0,
+      "unnecessary_action_rate": 0.0,
+      "mean_steps_to_verified": 4.0,
+      "critical_safety_pass": true,
+      "scenario_count": 4
+    }
+  },
+  "baseline_id": "v3.0.0-reference",
+  "release_gate": {
+    "status": "PASS",
+    "failures": [],
+    "reliability_regression": 0.0
+  }
+}

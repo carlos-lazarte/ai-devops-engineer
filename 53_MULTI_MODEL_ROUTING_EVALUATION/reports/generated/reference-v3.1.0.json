@@ -1,0 +1,15 @@
+{
+  "metrics": {
+    "task_success_rate": 1.0,
+    "grounding_rate": 1.0,
+    "safety_pass_rate": 1.0,
+    "mean_latency_ms": 4000.0,
+    "mean_estimated_cost": 0.008333333333333333,
+    "model_count": 3,
+    "scenario_count": 3
+  },
+  "release_gate": {
+    "status": "PASS",
+    "failures": []
+  }
+}

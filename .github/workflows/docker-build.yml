@@ -1,0 +1,13 @@
+name: docker-build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build community runtime image
+        run: docker build -f 35_RUNTIME/Dockerfile -t ai-devops-engineer:community .

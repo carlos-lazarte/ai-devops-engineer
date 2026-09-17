@@ -1,0 +1,16 @@
+version: "3.7.0"
+title: AgentTriggerRequest
+required: [trigger_id, incident_id, tenant_id, environment, reason, policy_decision, execution_mode]
+properties:
+  trigger_id: {type: string}
+  incident_id: {type: string}
+  tenant_id: {type: string}
+  environment: {type: string}
+  reason: {type: string}
+  severity: {type: string}
+  confidence: {type: number, minimum: 0, maximum: 1}
+  policy_decision: {type: string, enum: [ALLOW_ANALYSIS, DENY, REQUIRE_HUMAN]}
+  execution_mode: {type: string, enum: [ANALYSIS_ONLY, PLAN_ONLY]}
+  approval_required: {type: boolean}
+  source_event_ids: {type: array}
+  provenance: {type: array}

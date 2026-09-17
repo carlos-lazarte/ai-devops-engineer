@@ -1,0 +1,56 @@
+version: "1.0"
+responses:
+  EVAL-K8S-001:
+    summary: Simulated analysis grounded in supplied node and kubelet evidence.
+    confidence: 0.80
+    facts:
+      - Node is reported NotReady in the scenario.
+      - Kubelet evidence is available in the fixture set.
+    hypotheses:
+      - Kubelet or node health degradation requires verification.
+      - Network conditions may be relevant if supported by the supplied observation.
+    recommended_diagnostics:
+      - Inspect recent kubelet errors.
+      - Validate node conditions and recent events.
+    proposed_actions: []
+    unknowns:
+      - Root cause is not proven from the fixture alone.
+    references:
+      - 26_OPERATIONAL_AGENT_LAB/scenarios/K8S-NOTREADY-001.yaml
+      - 26_OPERATIONAL_AGENT_LAB/fixtures/node-description.txt
+      - 26_OPERATIONAL_AGENT_LAB/fixtures/kubelet.log
+    requires_human_approval: true
+
+  EVAL-TLS-001:
+    summary: Simulated TLS incident analysis.
+    confidence: 0.75
+    facts:
+      - A certificate rotation troubleshooting guide exists in the Vault.
+    hypotheses:
+      - Certificate chain, hostname, or deployment state may require verification.
+    recommended_diagnostics:
+      - Inspect certificate dates and chain.
+      - Validate the served certificate from the affected endpoint.
+    proposed_actions: []
+    unknowns:
+      - Exact endpoint values are not present in this fixture.
+    references:
+      - 16_TROUBLESHOOTING/Troubleshooting-TLS-Certificate.md
+    requires_human_approval: true
+
+  EVAL-TF-001:
+    summary: Simulated Terraform drift analysis.
+    confidence: 0.80
+    facts:
+      - Drift is treated as a state-versus-actual discrepancy requiring evidence.
+    hypotheses:
+      - Configuration or out-of-band changes may explain the drift.
+    recommended_diagnostics:
+      - Review terraform plan and state safely.
+    proposed_actions:
+      - Create a draft remediation plan for human review.
+    unknowns:
+      - No apply operation has been executed.
+    references:
+      - 16_TROUBLESHOOTING/Troubleshooting-Terraform-Drift.md
+    requires_human_approval: true

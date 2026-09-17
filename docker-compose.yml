@@ -1,0 +1,58 @@
+services:
+  ai-devops-runtime:
+    build:
+      context: .
+      dockerfile: 35_RUNTIME/Dockerfile
+    environment:
+      VAULT_ROOT: /vault
+      RUNTIME_HOST: 0.0.0.0
+      RUNTIME_PORT: 8080
+      AUDIT_LOG: /app/runtime-data/audit.jsonl
+      RAG_TOP_K: 5
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-}
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/vault:ro
+      - runtime-data:/app/runtime-data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+  prometheus:
+    image: ${PROMETHEUS_IMAGE:-prom/prometheus:latest}
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./36_OBSERVABILITY_SRE/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./36_OBSERVABILITY_SRE/alerts:/etc/prometheus/rules:ro
+      - prometheus-data:/prometheus
+    depends_on:
+      - ai-devops-runtime
+    security_opt:
+      - no-new-privileges:true
+
+  grafana:
+    image: ${GRAFANA_IMAGE:-grafana/grafana:latest}
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./36_OBSERVABILITY_SRE/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./36_OBSERVABILITY_SRE/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  runtime-data:
+  prometheus-data:
+  grafana-data:

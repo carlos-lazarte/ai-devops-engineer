@@ -1,0 +1,23 @@
+registry_version: "1.0"
+trust_policy: signed-artifact-required
+skills:
+  - skill_id: kubernetes-troubleshooting
+    version: 1.0.0
+    status: published
+    artifact: skills/kubernetes-troubleshooting/kubernetes-troubleshooting-1.0.0.tar.gz
+  - skill_id: linux-performance
+    version: 1.0.0
+    status: published
+    artifact: skills/linux-performance/linux-performance-1.0.0.tar.gz
+  - skill_id: terraform-review
+    version: 1.0.0
+    status: published
+    artifact: skills/terraform-review/terraform-review-1.0.0.tar.gz
+
+
+# v2.5.0 discovery metadata
+intelligence:
+  ranking_profile: default-devops-v1
+  semantic_backend: deterministic-term-baseline
+  embedding_backend: optional
+  max_candidates: 8

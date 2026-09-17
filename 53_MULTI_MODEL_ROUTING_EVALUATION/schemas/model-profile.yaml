@@ -1,0 +1,14 @@
+type: object
+required: [model_id, provider, quality_tier, capabilities]
+properties:
+  model_id: {type: string}
+  provider: {type: string}
+  quality_tier: {type: string, enum: [standard, advanced, critical]}
+  capabilities:
+    type: array
+    items: {type: string}
+  estimated_cost_per_1k_tokens: {type: number}
+  estimated_latency_ms: {type: number}
+  regions:
+    type: array
+    items: {type: string}

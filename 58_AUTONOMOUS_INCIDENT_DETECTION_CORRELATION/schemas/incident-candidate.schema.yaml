@@ -1,0 +1,30 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Incident Candidate
+type: object
+required:
+  - incident_id
+  - correlation_id
+  - state
+  - tenant_id
+  - environment
+  - signals
+  - severity
+  - confidence
+properties:
+  incident_id: {type: string}
+  correlation_id: {type: string}
+  state:
+    type: string
+    enum: [NEW, CORRELATING, CANDIDATE, TRIAGED, INVESTIGATING, SUPPRESSED, MERGED, CLOSED]
+  tenant_id: {type: string}
+  environment: {type: string}
+  signals:
+    type: array
+    items: {type: string}
+  severity:
+    type: string
+    enum: [low, medium, high, critical]
+  confidence: {type: number, minimum: 0, maximum: 1}
+  candidate_reason: {type: string}
+  human_review_required: {type: boolean}
+  production_execution_enabled: {type: boolean}

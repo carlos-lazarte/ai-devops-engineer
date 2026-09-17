@@ -1,0 +1,23 @@
+---
+run_id: string
+mode: dry-run|claude
+scenario: string
+context:
+  evidence_count: integer
+  retrieved_note_ids:
+    - string
+  retrieved_runbook_ids:
+    - string
+model:
+  provider: anthropic|none
+  model: string|null
+result:
+  status: success|error|dry-run
+  structured_response_valid: boolean
+  validation_errors:
+    - string
+approval:
+  required: boolean
+  approved: boolean|null
+provenance:
+  - string

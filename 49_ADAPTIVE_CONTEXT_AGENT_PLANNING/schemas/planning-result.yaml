@@ -1,0 +1,40 @@
+type: object
+required:
+  - task_id
+  - status
+  - steps
+  - policy_checked
+properties:
+  task_id:
+    type: string
+  status:
+    type: string
+    enum: [planned, blocked, partial]
+  assumptions:
+    type: array
+    items:
+      type: string
+  evidence_required:
+    type: array
+    items:
+      type: string
+  evidence_found:
+    type: array
+    items:
+      type: string
+  selected_skills:
+    type: array
+    items:
+      type: string
+  selected_tools:
+    type: array
+    items:
+      type: string
+  steps:
+    type: array
+    items:
+      type: object
+  policy_checked:
+    type: boolean
+  approval_required:
+    type: boolean

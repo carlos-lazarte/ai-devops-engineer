@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Obsidian workspace state
+.obsidian/workspace*.json
+.obsidian/cache
+.obsidian/snippets
+
+# Developer/release artifacts
+.venv/
+.rag-index/
+.rag-runs/
+dist/
+
+# Runtime generated state
+35_RUNTIME/runtime-data/
+
+.knowledge-graph/

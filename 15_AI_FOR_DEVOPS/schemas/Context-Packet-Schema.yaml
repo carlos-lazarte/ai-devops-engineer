@@ -1,0 +1,32 @@
+version: "0.4"
+task:
+  id: ""
+  type: incident|troubleshooting|review|documentation|architecture
+  objective: ""
+system:
+  environment: production|staging|development|lab|unknown
+  service: ""
+  technology: ""
+  version: ""
+time_window:
+  start: ""
+  end: ""
+context_notes: []
+evidence:
+  - id: ""
+    type: log|metric|trace|command|event|config|document|screenshot|other
+    source: ""
+    timestamp: ""
+    content: ""
+    integrity: original|transformed|summarized|unknown
+constraints:
+  - ""
+known_facts: []
+known_unknowns: []
+requested_output:
+  format: structured|markdown|checklist|postmortem|other
+  schema: "AI-Structured-Response-Contract"
+controls:
+  secret_redaction: required
+  destructive_actions: approval_required
+  human_validation: required

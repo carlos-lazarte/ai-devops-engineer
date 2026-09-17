@@ -1,0 +1,35 @@
+groups:
+  - name: ai-devops-runtime
+    rules:
+      - alert: RuntimeDown
+        expr: up{job="ai-devops-runtime"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: AI DevOps Runtime is unavailable
+          runbook: /36_OBSERVABILITY_SRE/runbooks/Runtime-Unavailable.md
+
+      - alert: RuntimeHighErrorRate
+        expr: |
+          sum(rate(ai_devops_http_requests_total{status_class="5xx"}[5m]))
+          /
+          sum(rate(ai_devops_http_requests_total[5m])) > 0.05
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Runtime 5xx rate exceeds 5 percent
+          runbook: /36_OBSERVABILITY_SRE/runbooks/Runtime-High-Error-Rate.md
+
+      - alert: RuntimeHighP95Latency
+        expr: |
+          histogram_quantile(0.95,
+            sum by (le, route) (rate(ai_devops_http_request_duration_seconds_bucket[5m]))
+          ) > 2
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Runtime p95 latency is above 2 seconds
+          runbook: /36_OBSERVABILITY_SRE/runbooks/Runtime-High-Latency.md

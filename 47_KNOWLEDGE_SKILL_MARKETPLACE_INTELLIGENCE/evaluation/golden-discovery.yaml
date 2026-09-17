@@ -1,0 +1,15 @@
+- task_id: DISC-K8S-001
+  query: "diagnose Kubernetes node not ready incident"
+  expected_top_skill: kubernetes-troubleshooting
+  environment: lab
+  risk: high
+- task_id: DISC-LINUX-001
+  query: "investigate Linux high CPU and memory pressure"
+  expected_top_skill: linux-performance
+  environment: lab
+  risk: medium
+- task_id: DISC-TF-001
+  query: "review Terraform plan for infrastructure drift"
+  expected_top_skill: terraform-review
+  environment: staging
+  risk: medium

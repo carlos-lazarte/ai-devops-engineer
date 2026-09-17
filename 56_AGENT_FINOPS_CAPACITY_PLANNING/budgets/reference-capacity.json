@@ -1,0 +1,20 @@
+[
+  {
+    "scope": {"tenant_id": "tenant-a", "environment": "lab"},
+    "period": "monthly",
+    "capacity": {
+      "tokens": 1000000,
+      "tool_calls": 500,
+      "estimated_cost": 10.0
+    }
+  },
+  {
+    "scope": {"tenant_id": "tenant-a", "environment": "prod"},
+    "period": "monthly",
+    "capacity": {
+      "tokens": 500000,
+      "tool_calls": 200,
+      "estimated_cost": 5.0
+    }
+  }
+]

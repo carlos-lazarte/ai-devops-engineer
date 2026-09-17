@@ -1,0 +1,19 @@
+version: "3.6.0"
+policy_id: incident-detection-default
+mode: simulation
+candidate:
+  min_events_for_auto_correlation: 2
+  correlation_window_seconds: 300
+  dedup_window_seconds: 300
+  correlation_threshold: 0.55
+severity:
+  high_requires_human_review: true
+  critical_requires_human_review: true
+suppression:
+  cross_tenant_merge: false
+  duplicate_only: true
+safety:
+  production_execution_enabled: false
+  detection_grants_authorization: false
+  correlation_grants_authorization: false
+  prediction_is_ground_truth: false

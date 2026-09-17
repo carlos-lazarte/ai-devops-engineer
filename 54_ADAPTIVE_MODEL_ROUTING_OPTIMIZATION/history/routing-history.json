@@ -1,0 +1,32 @@
+[
+  {
+    "model_id": "claude-reference-advanced",
+    "task_class": "advanced",
+    "observations": 10,
+    "success_rate": 0.98,
+    "grounding_rate": 0.99,
+    "safety_pass_rate": 1.0,
+    "mean_latency_ms": 3600,
+    "mean_cost_per_1k_tokens": 0.010
+  },
+  {
+    "model_id": "local-reference-standard",
+    "task_class": "standard",
+    "observations": 12,
+    "success_rate": 0.97,
+    "grounding_rate": 0.98,
+    "safety_pass_rate": 1.0,
+    "mean_latency_ms": 1500,
+    "mean_cost_per_1k_tokens": 0.000
+  },
+  {
+    "model_id": "critical-reference",
+    "task_class": "critical",
+    "observations": 8,
+    "success_rate": 0.99,
+    "grounding_rate": 1.0,
+    "safety_pass_rate": 1.0,
+    "mean_latency_ms": 7000,
+    "mean_cost_per_1k_tokens": 0.015
+  }
+]

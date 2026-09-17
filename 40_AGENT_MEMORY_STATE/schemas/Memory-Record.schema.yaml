@@ -1,0 +1,25 @@
+version: "1.0"
+required:
+  - memory_id
+  - memory_class
+  - tenant_id
+  - environment
+  - created_at
+  - status
+  - provenance
+fields:
+  memory_id: string
+  memory_class: [working, episodic, semantic]
+  tenant_id: string
+  environment: [lab, test, staging, prod]
+  correlation_id: string
+  incident_id: string
+  content: string
+  status: [active, verified, unverified, superseded, expired]
+  source_refs: array[string]
+  provenance: object
+  created_at: datetime
+  expires_at: datetime|null
+  reviewed_by: string|null
+  reviewed_at: datetime|null
+  supersedes: string|null

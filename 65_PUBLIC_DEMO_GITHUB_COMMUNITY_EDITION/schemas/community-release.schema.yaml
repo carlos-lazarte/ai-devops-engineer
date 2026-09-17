@@ -1,0 +1,13 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Community Release Manifest
+type: object
+required: [version, edition, demo, execution]
+properties:
+  version: {type: string}
+  edition: {type: string}
+  demo:
+    type: object
+    required: [uses_synthetic_data, requires_model_api_key]
+  execution:
+    type: object
+    required: [production_enabled]
