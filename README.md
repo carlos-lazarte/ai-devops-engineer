@@ -2,7 +2,7 @@
 
 AI DevOps Engineer is a local-first AI/SRE operations platform that connects **knowledge, observability, incident correlation, evidence-first investigation and human-controlled action**.
 
-> **Community Edition 3.15.0** — product hardening after clean-clone demo validation, with approval-metric regression coverage and version consistency.
+> **Community Edition 3.15.1** — patch release aligning the public landing configuration with the canonical repository and release version.
 
 ## What you can do today
 
@@ -51,7 +51,7 @@ make site-check
 make package
 ```
 
-GitHub Releases are created by `.github/workflows/release.yml` when a semantic version tag such as `v3.15.0` is pushed. The landing page is deployed by `.github/workflows/pages.yml`. A separate release workflow can publish the Community container to GHCR.
+GitHub Releases are created by `.github/workflows/release.yml` when a semantic version tag such as `v3.15.1` is pushed. The landing page is deployed by `.github/workflows/pages.yml`. A separate release workflow can publish the Community container to GHCR.
 
 See `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/docs/Public-Repository-Blueprint.md` and `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/docs/PUBLICATION-CHECKLIST.md` for the publication sequence.
 

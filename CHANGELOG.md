@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.15.1 — Release Artifact and Landing Configuration Fix
+
+- Updated the public landing-page configuration to reference the canonical GitHub repository.
+- Aligned the public landing-page product version with `3.15.1`.
+- Published as a patch release so the downloadable release artifact includes the post-release landing configuration correction.
+- Preserved the Community reference runtime safety model: production execution remains disabled and infrastructure connectors remain read-only.
+
 ## 3.15.0 — Community Product Hardening
 
 - Fixed the operational dashboard approval metric to count investigations that require `human_approval_required` while remaining compatible with the legacy `human_review_required` field.
