@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and prepare a public v3.14 release without publishing it."""
+"""Validate and prepare a public release without publishing it."""
 from __future__ import annotations
 
 import argparse
@@ -27,9 +27,6 @@ def main() -> int:
     version = (root / "VERSION").read_text(encoding="utf-8").strip()
     if not SEMVER.match(version):
         print(f"invalid VERSION: {version}")
-        return 2
-    if not version.startswith("3.14."):
-        print(f"release_prepare expects v3.14.x, found {version}")
         return 2
     missing = [p for p in REQUIRED if not (root/p).exists()]
     if missing:
