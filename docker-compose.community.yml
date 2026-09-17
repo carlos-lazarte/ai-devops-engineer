@@ -1,0 +1,11 @@
+services:
+  ai-devops-engineer:
+    build:
+      context: ./35_RUNTIME
+    ports:
+      - "8080:8080"
+    environment:
+      AIOPS_ENV: community
+      PRODUCTION_EXECUTION_ENABLED: "false"
+      CONNECTORS_READ_ONLY: "true"
+    restart: unless-stopped
