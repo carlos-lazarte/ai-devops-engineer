@@ -1,6 +1,6 @@
 # Roadmap
 
-## Current — 3.15.1
+## Current — 3.15.2
 
 - Community Edition local runtime
 - Real telemetry ingestion
@@ -14,6 +14,7 @@
 - Clean-clone demo validation
 - Product hardening and regression coverage
 - Release artifact and landing configuration alignment
+- Landing page version consistency
 
 ## Near term
 
