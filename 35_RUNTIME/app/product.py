@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from .core import request_id
 from .store import IncidentStore
-import sys
 
 V39_ROOT = Path(__file__).resolve().parents[2] / "61_REAL_TELEMETRY_EVENT_INGESTION"
 V310_ROOT = Path(__file__).resolve().parents[2] / "62_PRODUCTION_OBSERVABILITY_CONNECTORS"
@@ -35,12 +35,21 @@ class ProductService:
     def now() -> str:
         return datetime.now(timezone.utc).isoformat()
 
+    def version(self) -> str:
+        version_path = self.vault_root / "VERSION"
+        try:
+            version = version_path.read_text(encoding="utf-8").strip()
+        except OSError:
+            version = "unknown"
+        return version or "unknown"
+
     def product_info(self) -> dict[str, Any]:
+        version = self.version()
         return {
             "product": "AI DevOps Engineer",
             "edition": "Community Local Runtime",
-            "dashboard": {"version": "3.14.0", "features": ["summary", "incident_queue", "investigation_queue", "investigation_detail", "telemetry", "connector_health"]},
-            "version": "3.14.0",
+            "dashboard": {"version": version, "features": ["summary", "incident_queue", "investigation_queue", "investigation_detail", "telemetry", "connector_health"]},
+            "version": version,
             "api_version": "v1",
             "execution": {"production_enabled": False, "mode": "approval-gated"},
             "components": ["Knowledge", "RAG", "Telemetry Ingestion", "Incident Engine", "Agent Commander", "Automated Investigation", "Knowledge Graph", "Skill Discovery", "Planner", "Policy", "Audit"],
@@ -89,7 +98,6 @@ class ProductService:
         self.db.upsert_incident(incident)
         return incident
 
-
     def dashboard_summary(self, tenant_id: str | None = None) -> dict[str, Any]:
         incidents = self.db.list_incidents(tenant_id)
         investigations = self.db.list_investigations(tenant_id, 500)
@@ -106,11 +114,12 @@ class ProductService:
         for item in investigations:
             status = str(item.get("status", "UNKNOWN"))
             inv_status[status] = inv_status.get(status, 0) + 1
-            if bool((item.get("safety") or {}).get("human_review_required")):
+            safety = item.get("safety") or {}
+            if bool(safety.get("human_approval_required") or safety.get("human_review_required")):
                 human_review_required += 1
         return {
             "status": "ok",
-            "version": "3.14.0",
+            "version": self.version(),
             "tenant_id": tenant_id,
             "totals": {"incidents": len(incidents), "investigations": len(investigations), "telemetry_events": len(telemetry)},
             "incidents": {"by_severity": severities, "by_state": states},
@@ -140,7 +149,6 @@ class ProductService:
         if result is None:
             raise FileNotFoundError("incident_not_found")
         return result
-
 
     def ingest_telemetry_event(self, payload: dict[str, Any]) -> dict[str, Any]:
         return self.telemetry.ingest_event(payload)
