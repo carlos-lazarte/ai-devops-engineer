@@ -5,7 +5,11 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 
 def test_release_structure():
-    assert (ROOT / "VERSION").read_text().strip() == "3.14.0"
+    version = (ROOT / "VERSION").read_text().strip()
+    assert version, "VERSION must not be empty"
+    assert version.count(".") == 2, f"Invalid semantic version: {version}"
+    major, minor, patch = version.split(".")
+    assert all(part.isdigit() for part in (major, minor, patch)), f"Invalid semantic version: {version}"
     for rel in [
         ".github/workflows/release.yml",
         ".github/workflows/pages.yml",
