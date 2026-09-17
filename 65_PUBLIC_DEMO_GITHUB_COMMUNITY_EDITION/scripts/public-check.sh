@@ -28,7 +28,9 @@ for required in README.md LICENSE NOTICE COMMUNITY.md SECURITY.md SUPPORT.md GOV
   [[ -e "$required" ]] || { echo "MISSING: $required"; fail=1; }
 done
 
-[[ "$(cat VERSION)" == "3.14.0" ]] || { echo "VERSION mismatch"; fail=1; }
+# Version is validated generically so the public check remains reusable across releases.
+version="$(cat VERSION)"
+[[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.][0-9A-Za-z.-]+)?$ ]] || { echo "VERSION mismatch: $version"; fail=1; }
 
 if [[ $fail -ne 0 ]]; then
   echo "PUBLIC CHECK: FAIL"
