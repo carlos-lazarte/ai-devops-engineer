@@ -26,6 +26,20 @@ def sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def sqlite_text(value: object) -> str | None:
+    """Convert frontmatter values to SQLite TEXT-compatible values.
+
+    Frontmatter fields may be scalars or YAML-style lists. SQLite's Python
+    adapter accepts scalar primitives, but not list/dict objects directly.
+    Complex values are stored as JSON text to preserve their structure.
+    """
+    if value is None:
+        return None
+    if isinstance(value, (list, tuple, dict)):
+        return json.dumps(value, ensure_ascii=False)
+    return str(value)
+
+
 def parse_frontmatter(text: str) -> tuple[dict, str]:
     if not text.startswith("---\n"):
         return {}, text
@@ -150,7 +164,17 @@ def main() -> None:
             md = row["metadata"]
             conn.execute(
                 "INSERT INTO chunks(rowid,chunk_id,source_path,heading,ordinal,type,domain,technology,status) VALUES(?,?,?,?,?,?,?,?,?)",
-                (idx, row["chunk_id"], row["source_path"], row["heading"], row["ordinal"], md.get("type"), md.get("domain"), md.get("technology"), md.get("status")),
+                (
+                    idx,
+                    row["chunk_id"],
+                    row["source_path"],
+                    row["heading"],
+                    row["ordinal"],
+                    sqlite_text(md.get("type")),
+                    sqlite_text(md.get("domain")),
+                    sqlite_text(md.get("technology")),
+                    sqlite_text(md.get("status")),
+                ),
             )
         conn.commit()
 
