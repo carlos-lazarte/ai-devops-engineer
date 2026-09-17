@@ -2,7 +2,7 @@
 
 AI DevOps Engineer is a local-first AI/SRE operations platform that connects **knowledge, observability, incident correlation, evidence-first investigation and human-controlled action**.
 
-> **Community Edition 3.14.0** — public-repository release automation, GitHub Pages product landing page and reproducible Community distribution.
+> **Community Edition 3.15.0** — product hardening after clean-clone demo validation, with approval-metric regression coverage and version consistency.
 
 ## What you can do today
 
@@ -42,7 +42,7 @@ Then open `http://localhost:8080/`.
 
 ## Public repository and release flow
 
-The v3.14 release tooling is under `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/`.
+The release tooling is under `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/`.
 
 ```bash
 make public-check
@@ -51,17 +51,13 @@ make site-check
 make package
 ```
 
-GitHub Releases are created by `.github/workflows/release.yml` when a semantic version tag such as `v3.14.0` is pushed. The landing page is deployed by `.github/workflows/pages.yml`. A separate release workflow can publish the Community container to GHCR.
+GitHub Releases are created by `.github/workflows/release.yml` when a semantic version tag such as `v3.15.0` is pushed. The landing page is deployed by `.github/workflows/pages.yml`. A separate release workflow can publish the Community container to GHCR.
 
 See `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/docs/Public-Repository-Blueprint.md` and `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/docs/PUBLICATION-CHECKLIST.md` for the publication sequence.
 
 ## Product landing page
 
-The static landing page source is in `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/site/`. Replace `https://github.com/OWNER/REPO` with the actual repository URL before publication:
-
-```bash
-python3 66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/scripts/configure_repo.py OWNER/REPO
-```
+The static landing page source is in `66_PUBLIC_REPOSITORY_RELEASE_AUTOMATION_LANDING_PAGE/site/`.
 
 ## Repository map
 
