@@ -1,5 +1,5 @@
 pytest>=8,<9
 anthropic>=0.40,<1
 prometheus-client>=0.20,<1
-psycopg[binary]>=3.2,<4
+psycopg[binary]>=3.3.5,<4
 PyYAML>=6,<7
