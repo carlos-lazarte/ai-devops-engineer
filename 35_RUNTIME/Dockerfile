@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.15-slim
 
 LABEL org.opencontainers.image.title="AI DevOps Engineer" \
       org.opencontainers.image.description="Community Edition AI/SRE incident investigation runtime" \
